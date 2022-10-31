@@ -1,0 +1,91 @@
+body {
+    background-color: gray;
+}
+
+.header {
+    position: fixed;
+    margin-left: -8px;
+    margin-top: -85px;
+    width: 100%;
+    height: 5%;
+    color: white;
+    background-color: rgb(49, 47, 48);
+    padding: 5px;
+}
+
+.footer {
+    position: relative;
+    bottom: 0px;
+    height: 13%;
+    color: white;
+    background-color: rgb(49, 47, 48);
+    margin-left: -8px;
+    margin-bottom: -14px;
+    padding-left: 46%;
+}
+
+
+.navPosition {
+    margin-top: 75px;
+    margin-bottom: -35px;
+    margin-left: 16.06%;
+
+}
+
+.mapTitle {
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: rgb(49, 47, 48);
+    width: 1264px;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+.nameInput {
+    width: 90%;
+}
+
+.commentInput {
+    height: 30%;
+}
+
+.userCommentInput {
+    border-radius: 35px;
+    width: 25%;
+    height: 30%;
+    padding: 7px;
+    text-align: center;
+    background-color: rgb(49, 47, 48);
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+#comments {
+    height: 50px;
+    width: 90%;
+}
+
+.maps {
+    height: 965px;
+    width: 1264px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.legenda {
+    margin-left: 16.06%;
+    background-color: rgb(49, 47, 48);
+    width: 1264px;
+    color: white;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.mapButtons {
+    text-align: center;
+    height: 45px;
+}
