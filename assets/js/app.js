@@ -25,29 +25,31 @@ function changeMapTodams() { console.log('dams works') };
 
 function changeMapToarea() { console.log('area works') };
 function addComments() {
-    console.log('comment works');
     inputFirstName = document.getElementById('fname');
     inputLastName = document.getElementById('lname');
     inputComment = document.getElementById('comments');
+    inputCompany = document.getElementById('organization');
     firstName = inputFirstName.value;
     lastName = inputLastName.value;
     comment = inputComment.value;
-    addCommentsLayout(firstName, lastName, comment);
+    organization = inputCompany.value;
+    addCommentsLayout(firstName, lastName, organization, comment);
 }
 
-function addCommentsLayout(firstName, lastName, comment) {
+function addCommentsLayout(firstName, lastName, organization, comment) {
+    if ((firstName.length > 1 && lastName.length >1) && (organization.length > 1 && comment.length > 1)){
     commentDiv = document.createElement('div');
     src = document.getElementById('displayUserInput');
     commentDiv.classList.add('userCommentInput');
     src.appendChild(commentDiv);
     //p
     commentUserName = document.createElement('p');
-    
+
     commentUserName.setAttribute('id', 'commmentName');
     commentDiv.appendChild(commentUserName);
     //strong
     commentUserNameStrong = document.createElement('strong');
-    commentUserNameStrong.innerHTML = `${firstName} ${lastName}`;
+    commentUserNameStrong.innerHTML = `${firstName} ${lastName} (${organization})`;
     commentUserName.appendChild(commentUserNameStrong);
     //hr
     commentHr = document.createElement('hr');
@@ -57,4 +59,13 @@ function addCommentsLayout(firstName, lastName, comment) {
     displayComment.innerHTML = `${comment}`;
     displayComment.classList.add('UserComment')
     commentDiv.appendChild(displayComment);
+    }
+    clearInputFields()
 };
+function clearInputFields() {
+    console.log('hello');
+    document.getElementById('fname').value = "";
+    document.getElementById('lname').value = "";
+    document.getElementById('comments').value = "";
+    document.getElementById('organization').value = "";
+}

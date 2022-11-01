@@ -35,18 +35,18 @@
         <input type="text" id="fname" name="fname" value="" class="nameInput"><br>
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname" value="" class="nameInput"><br>
+        <label for="fname">Company / organization: <br><small>max 57 characters</small></label><br>
+        <input type="text" id="organization" name="organization" value="" class="nameInput" maxlength="57"><br>
         <label for="comments">Comment:</label><br><!-- class="commentInput" -->
         <input type="text" id="comments" name="comments" value=""><br>
         <button type="button" id="add-button" class="button ">Submit</button>
       </form>
     </section>
+    <section class="userCommentInput">
+      <p><strong>Posted comments</strong></p>
+    </section>
     <div id="displayUserInput">
-      <!-- display user input here-->
-      <div class="userCommentInput">
-        <p><strong> FirstName LastName</strong></p>
-        <p class="UserComment">comment</p>
-      </div>
-      <!-- end of user input-->
+      <!-- User input displays here-->
     </div>
   </main>
   <section class="footer">

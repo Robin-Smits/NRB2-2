@@ -99,4 +99,5 @@ body {
     color: black;
     padding: 0.5%;
     text-align: left;
+    overflow-wrap: break-word; 
 }
