@@ -45,7 +45,6 @@ function changeMapTodams() {
  * Function that makes a overlay appear with the area visual
  */
 function changeMapToarea() {
-    console.log('area works')
     createMapOverlay("./assets/images/river.png")
 };
 
