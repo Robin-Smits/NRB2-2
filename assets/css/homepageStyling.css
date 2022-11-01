@@ -187,3 +187,7 @@ body {
     margin-left: 40%;
     margin-top: 35%;
 }
+.stylingHeaderInfoCard {
+    text-align: center;
+    font-size: 40px;
+}

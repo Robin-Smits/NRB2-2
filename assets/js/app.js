@@ -161,12 +161,18 @@ function createChangeButton(inputButtonID) {
     inputButton.innerHTML = 'I';
     src.appendChild(inputButton);
 }
-
-function createPopUp(infoCardPopUpID, popUpTitle, popUpInhoud) {
+/**
+ * Function that makes the pop-up card and displays it
+ * @param {*} infoCardPopUpID id that the element gets
+ * @param {*} infoCardPositioningClass positioning of the info button on the map
+ * @param {*} popUpTitle the title of the map
+ * @param {*} popUpExplenation the info that the info card includes
+ */
+function createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpExplenation) {
     popUpDiv = document.createElement('div');
     src = document.getElementById('mapDisplay');
     popUpDiv.setAttribute('id', infoCardPopUpID);
-    popUpDiv.classList.add('popUp')
+    popUpDiv.classList.add('popUp');
     src.appendChild(popUpDiv);
     //main div
     mainDiv = document.createElement('div');
@@ -179,6 +185,7 @@ function createPopUp(infoCardPopUpID, popUpTitle, popUpInhoud) {
     mainDiv.appendChild(span);
     //p
     popUpP = document.createElement('p');
+    popUpP.classList.add(infoCardPositioningClass);
     mainDiv.appendChild(popUpP);
     //popUpStrong
     popUpStrong = document.createElement('strong');
@@ -189,10 +196,14 @@ function createPopUp(infoCardPopUpID, popUpTitle, popUpInhoud) {
     mainDiv.appendChild(div1);
     //p2
     div1P = document.createElement('p');
-    div1P.innerHTML = popUpInhoud;
+    div1P.innerHTML = popUpExplenation;
     div1.appendChild(div1P);
 }
-
+/**
+ * function that makes the button clickable
+ * @param {*} popUpMenuID The id of the menue of the pop-up
+ * @param {*} inputButtonID the id of the input button
+ */
 function makeButtonClickable (popUpMenuID, inputButtonID){
 popUpMenu = document.getElementById(popUpMenuID);
 popUpButton = document.getElementById(inputButtonID);
@@ -211,9 +222,17 @@ window.onclick = function (event) {
         popUpMenu.style.display = 'none';
     }
 }};
-function addFunctionalButton (inputButtonID, infoCardPopUpID, popUpTitle, popUpInhoud){
+/**
+ * Function where you can create an entire new pop-up menu 
+ * @param {string} inputButtonID The id of the new button on the map
+ * @param {string} infoCardPopUpID The id of the pop-up behind the button
+ * @param {class} infoCardPositioningClass The positioning on the map based on the contained info
+ * @param {string} popUpTitle Title of the displayed map
+ * @param {string} popUpInhoud The text in the pop-up
+ */
+function addFunctionalButton (inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud){
     createChangeButton(inputButtonID)
-    createPopUp(infoCardPopUpID, popUpTitle, popUpInhoud)
+    createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud)
     makeButtonClickable (infoCardPopUpID, inputButtonID)
 }
 
@@ -221,4 +240,6 @@ let inputButtonID = 'inputButton1';
 let infoCardPopUpID = 'infoCard1PopUp';
 let popUpTitle = '1e pop up';
 let popUpInhoud = 'dit is tekst';
-addFunctionalButton (inputButtonID, infoCardPopUpID, popUpTitle, popUpInhoud);
+let infoCardPositioningClass = 'stylingHeaderInfoCard'
+
+addFunctionalButton (inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
