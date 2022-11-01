@@ -204,24 +204,25 @@ function createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popU
  * @param {*} popUpMenuID The id of the menue of the pop-up
  * @param {*} inputButtonID the id of the input button
  */
-function makeButtonClickable (popUpMenuID, inputButtonID){
-popUpMenu = document.getElementById(popUpMenuID);
-popUpButton = document.getElementById(inputButtonID);
-popUpMenuContent = document.getElementsByClassName('popUp-sluiten')[0];
+function makeButtonClickable(popUpMenuID, inputButtonID) {
+    popUpMenu = document.getElementById(popUpMenuID);
+    popUpButton = document.getElementById(inputButtonID);
+    popUpMenuContent = document.getElementsByClassName('popUp-sluiten')[0];
 
-popUpButton.onclick = function () {
-    popUpMenu.style.display = 'block';
-};
+    popUpButton.onclick = function () {
+        popUpMenu.style.display = 'block';
+    };
 
-popUpMenuContent.onclick = function () {
-    popUpMenu.style.display = 'none';
-};
-
-window.onclick = function (event) {
-    if (event.target == popUpMenu) {
+    popUpMenuContent.onclick = function () {
         popUpMenu.style.display = 'none';
+    };
+
+    window.onclick = function (event) {
+        if (event.target == popUpMenu) {
+            popUpMenu.style.display = 'none';
+        }
     }
-}};
+};
 /**
  * Function where you can create an entire new pop-up menu 
  * @param {string} inputButtonID The id of the new button on the map
@@ -230,10 +231,10 @@ window.onclick = function (event) {
  * @param {string} popUpTitle Title of the displayed map
  * @param {string} popUpInhoud The text in the pop-up
  */
-function addFunctionalButton (inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud){
+function addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud) {
     createChangeButton(inputButtonID)
     createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud)
-    makeButtonClickable (infoCardPopUpID, inputButtonID)
+    makeButtonClickable(infoCardPopUpID, inputButtonID)
 }
 
 let inputButtonID = 'inputButton1';
@@ -242,4 +243,4 @@ let popUpTitle = '1e pop up';
 let popUpInhoud = 'dit is tekst';
 let infoCardPositioningClass = 'stylingHeaderInfoCard'
 
-addFunctionalButton (inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
+addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
