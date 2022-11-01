@@ -130,3 +130,8 @@ body {
     width: 1264px;
     opacity: 0.5;
 }
+.mapOverlayButton{position: absolute;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Serif';}

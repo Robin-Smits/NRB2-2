@@ -19,7 +19,8 @@ addComment.addEventListener('click', addComments);
  * Function that makes an overlay with the river overview and shows it
  */
 function changeMapToRivers() {
-    createMapOverlay("./assets/images/river.png")
+    createMapOverlay("./assets/images/river.png");
+    changeMapTitle ('Rivers');
     //changeMap = document.getElementById('changeMapDisplay');
     //changeMap.src = "./assets/images/cleanMap.png"
 };
@@ -31,6 +32,7 @@ function changeMapToBasic() {
     console.log('Basic works')
     changeMap = document.getElementById('changeMapDisplay');
     changeMap.src = "./assets/images/beforeMap.png"
+    changeMapTitle ('Base map');
     clearMapOverlays();
 };
 
@@ -39,13 +41,15 @@ function changeMapToBasic() {
  */
 function changeMapTodams() {
     createMapOverlay("./assets/images/river.png");
+    changeMapTitle ('Dams');
 }
 
 /**
  * Function that makes a overlay appear with the area visual
  */
 function changeMapToarea() {
-    createMapOverlay("./assets/images/river.png")
+    createMapOverlay("./assets/images/river.png");
+    changeMapTitle ('Area restrictions');
 };
 
 /**
@@ -135,3 +139,25 @@ function createMapOverlay(OverlaySource) {
     displayRivers.setAttribute('alt', 'map')
     imgDiv.appendChild(displayRivers);
 }
+
+/**
+ * Function that makes the title of the map change
+ * @param {*} newMapTitle the new title of the map
+ */
+function changeMapTitle (newMapTitle){
+    src = document.getElementById('mapTitle');
+    src.innerHTML = newMapTitle;
+}
+
+/**
+ * Creates the button to change the table
+ */
+ function createChangeButton(){
+    inputButton = document.createElement('button');
+    src = document.getElementById('mapDisplay');
+    inputButton.setAttribute('id','popUpButton');
+    inputButton.classList.add('mapOverlayButton');
+    inputButton.innerHTML = 'I';
+    src.appendChild(inputButton);
+  }
+  createChangeButton()
