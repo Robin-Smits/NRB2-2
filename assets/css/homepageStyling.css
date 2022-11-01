@@ -91,7 +91,7 @@ body {
     height: 45px;
 }
 
-.UserCommentName {
+.UserComment {
     outline-style: solid;
     outline-color: black;
     outline-width: 2px;
