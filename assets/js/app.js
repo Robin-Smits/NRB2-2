@@ -20,7 +20,7 @@ addComment.addEventListener('click', addComments);
  */
 function changeMapToRivers() {
     createMapOverlay("./assets/images/river.png");
-    changeMapTitle ('Rivers');
+    changeMapTitle('Rivers');
     //changeMap = document.getElementById('changeMapDisplay');
     //changeMap.src = "./assets/images/cleanMap.png"
 };
@@ -32,7 +32,7 @@ function changeMapToBasic() {
     console.log('Basic works')
     changeMap = document.getElementById('changeMapDisplay');
     changeMap.src = "./assets/images/beforeMap.png"
-    changeMapTitle ('Base map');
+    changeMapTitle('Base map');
     clearMapOverlays();
 };
 
@@ -41,7 +41,7 @@ function changeMapToBasic() {
  */
 function changeMapTodams() {
     createMapOverlay("./assets/images/river.png");
-    changeMapTitle ('Dams');
+    changeMapTitle('Dams');
 }
 
 /**
@@ -49,7 +49,7 @@ function changeMapTodams() {
  */
 function changeMapToarea() {
     createMapOverlay("./assets/images/river.png");
-    changeMapTitle ('Area restrictions');
+    changeMapTitle('Area restrictions');
 };
 
 /**
@@ -144,7 +144,7 @@ function createMapOverlay(OverlaySource) {
  * Function that makes the title of the map change
  * @param {*} newMapTitle the new title of the map
  */
-function changeMapTitle (newMapTitle){
+function changeMapTitle(newMapTitle) {
     src = document.getElementById('mapTitle');
     src.innerHTML = newMapTitle;
 }
@@ -152,12 +152,73 @@ function changeMapTitle (newMapTitle){
 /**
  * Creates the button to change the table
  */
- function createChangeButton(){
+function createChangeButton(inputButtonID) {
     inputButton = document.createElement('button');
     src = document.getElementById('mapDisplay');
-    inputButton.setAttribute('id','popUpButton');
+    inputButton.setAttribute('id', inputButtonID);
+    inputButton.classList.add('positionIbutton');
     inputButton.classList.add('mapOverlayButton');
     inputButton.innerHTML = 'I';
     src.appendChild(inputButton);
-  }
-  createChangeButton()
+}
+
+function createPopUp(infoCardPopUpID, popUpTitle, popUpInhoud) {
+    popUpDiv = document.createElement('div');
+    src = document.getElementById('mapDisplay');
+    popUpDiv.setAttribute('id', infoCardPopUpID);
+    popUpDiv.classList.add('popUp')
+    src.appendChild(popUpDiv);
+    //main div
+    mainDiv = document.createElement('div');
+    mainDiv.classList.add('popUp-inhoud');
+    popUpDiv.appendChild(mainDiv);
+    //span
+    span = document.createElement('span');
+    span.classList.add('popUp-sluiten');
+    span.innerHTML = "&times";
+    mainDiv.appendChild(span);
+    //p
+    popUpP = document.createElement('p');
+    mainDiv.appendChild(popUpP);
+    //popUpStrong
+    popUpStrong = document.createElement('strong');
+    popUpStrong.innerHTML = popUpTitle;
+    popUpP.appendChild(popUpStrong);
+    //div layer2
+    div1 = document.createElement('div');
+    mainDiv.appendChild(div1);
+    //p2
+    div1P = document.createElement('p');
+    div1P.innerHTML = popUpInhoud;
+    div1.appendChild(div1P);
+}
+
+function makeButtonClickable (popUpMenuID, inputButtonID){
+popUpMenu = document.getElementById(popUpMenuID);
+popUpButton = document.getElementById(inputButtonID);
+popUpMenuContent = document.getElementsByClassName('popUp-sluiten')[0];
+
+popUpButton.onclick = function () {
+    popUpMenu.style.display = 'block';
+};
+
+popUpMenuContent.onclick = function () {
+    popUpMenu.style.display = 'none';
+};
+
+window.onclick = function (event) {
+    if (event.target == popUpMenu) {
+        popUpMenu.style.display = 'none';
+    }
+}};
+function addFunctionalButton (inputButtonID, infoCardPopUpID, popUpTitle, popUpInhoud){
+    createChangeButton(inputButtonID)
+    createPopUp(infoCardPopUpID, popUpTitle, popUpInhoud)
+    makeButtonClickable (infoCardPopUpID, inputButtonID)
+}
+
+let inputButtonID = 'inputButton1';
+let infoCardPopUpID = 'infoCard1PopUp';
+let popUpTitle = '1e pop up';
+let popUpInhoud = 'dit is tekst';
+addFunctionalButton (inputButtonID, infoCardPopUpID, popUpTitle, popUpInhoud);
