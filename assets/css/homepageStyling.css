@@ -29,6 +29,9 @@ body {
     margin-top: 75px;
     margin-bottom: -35px;
     margin-left: 16.06%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
@@ -40,6 +43,9 @@ body {
     font-size: 35px;
     color: white;
     text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nameInput {
@@ -69,21 +75,16 @@ body {
     width: 90%;
 }
 
-.maps {
-    height: 965px;
-    width: 1264px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.legenda {
+.legend {
     margin-left: 16.06%;
     background-color: rgb(49, 47, 48);
     width: 1264px;
     color: white;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mapButtons {
@@ -100,4 +101,29 @@ body {
     padding: 0.5%;
     text-align: left;
     overflow-wrap: break-word; 
+}
+
+.maps {
+    height: 965px;
+    width: 1264px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mapDisplay{
+    position: relative;
+    height: 965px;
+    width: 1264px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mapOverlay {
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 965px;
+    width: 1264px;
+    opacity: 0.5;
 }
