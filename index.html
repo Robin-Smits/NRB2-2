@@ -23,9 +23,10 @@
     <section class="legenda">
       <img src="Legenda" alt="legenda"><br>
       <div class="mapButtons">
-        <button id="riversBTN">Rivers</button>
-        <button id="damsBTN">Dams</button>
-        <button id="areaBTN">area restrictions</button>
+        <button type="button" id="riversBTN">Rivers</button>
+        <button type="button" id="damsBTN">Dams</button>
+        <button type="button" id="areaBTN">area restrictions</button>
+        <button type="button" id="basicBTN">Base map</button>
       </div>
     </section>
     <section>
@@ -36,11 +37,16 @@
         <input type="text" id="lname" name="lname" value="" class="nameInput"><br>
         <label for="comments">Comment:</label><br><!-- class="commentInput" -->
         <input type="text" id="comments" name="comments" value=""><br>
-        <button id="add-button" class="button ">Submit</button>
+        <button type="button" id="add-button" class="button ">Submit</button>
       </form>
     </section>
     <div id="displayUserInput">
       <!-- display user input here-->
+      <div class="userCommentInput">
+        <p><strong> FirstName LastName</strong></p>
+        <p class="UserCommentName">comment</p>
+      </div>
+      <!-- end of user input-->
     </div>
   </main>
   <section class="footer">

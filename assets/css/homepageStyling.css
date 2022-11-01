@@ -85,7 +85,18 @@ body {
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
 }
+
 .mapButtons {
     text-align: center;
     height: 45px;
+}
+
+.UserCommentName {
+    outline-style: solid;
+    outline-color: black;
+    outline-width: 2px;
+    background-color: white;
+    color: black;
+    padding: 0.5%;
+    text-align: left;
 }
