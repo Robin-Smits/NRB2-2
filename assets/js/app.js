@@ -9,6 +9,12 @@ let firstName = '';
 let lastName = '';
 let userComment = '';
 
+let inputButtonID = '';
+let infoCardPopUpID = '';
+let popUpTitle = '';
+let popUpInhoud = '';
+let infoCardPositioningClass = ''
+
 riversButton.addEventListener('click', changeMapToRivers);
 damsButton.addEventListener('click', changeMapTodams);
 areaButton.addEventListener('click', changeMapToarea);
@@ -69,10 +75,10 @@ function addComments() {
 
 /**
  * Function that makes the div with the comment and styling
- * @param {*} firstName users first name
- * @param {*} lastName users last name
- * @param {*} organization name of the organization of the user
- * @param {*} comment the comment that the user typed
+ * @param {string} firstName users first name
+ * @param {string} lastName users last name
+ * @param {string} organization name of the organization of the user
+ * @param {string} comment the comment that the user typed
  */
 function addCommentsLayout(firstName, lastName, organization, comment) {
     if ((firstName.length > 1 && lastName.length > 1) && (organization.length > 1 && comment.length > 1)) {
@@ -125,7 +131,7 @@ function clearMapOverlays() {
 
 /**
  * function that creates the overlays of the map
- * @param {*} OverlaySource 
+ * @param {string} OverlaySource the direction to the image that will become the overlay
  */
 function createMapOverlay(OverlaySource) {
     imgDiv = document.createElement('div');
@@ -142,7 +148,7 @@ function createMapOverlay(OverlaySource) {
 
 /**
  * Function that makes the title of the map change
- * @param {*} newMapTitle the new title of the map
+ * @param {string} newMapTitle the new title of the map
  */
 function changeMapTitle(newMapTitle) {
     src = document.getElementById('mapTitle');
@@ -163,10 +169,10 @@ function createChangeButton(inputButtonID) {
 }
 /**
  * Function that makes the pop-up card and displays it
- * @param {*} infoCardPopUpID id that the element gets
- * @param {*} infoCardPositioningClass positioning of the info button on the map
- * @param {*} popUpTitle the title of the map
- * @param {*} popUpExplenation the info that the info card includes
+ * @param {string} infoCardPopUpID id that the element gets
+ * @param {class} infoCardPositioningClass positioning of the info button on the map
+ * @param {string} popUpTitle the title of the map
+ * @param {string} popUpExplenation the info that the info card includes
  */
 function createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpExplenation) {
     popUpDiv = document.createElement('div');
@@ -201,8 +207,8 @@ function createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popU
 }
 /**
  * function that makes the button clickable
- * @param {*} popUpMenuID The id of the menue of the pop-up
- * @param {*} inputButtonID the id of the input button
+ * @param {string} popUpMenuID The id of the menue of the pop-up
+ * @param {string} inputButtonID the id of the input button
  */
 function makeButtonClickable(popUpMenuID, inputButtonID) {
     popUpMenu = document.getElementById(popUpMenuID);
@@ -237,10 +243,10 @@ function addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioning
     makeButtonClickable(infoCardPopUpID, inputButtonID)
 }
 
-let inputButtonID = 'inputButton1';
-let infoCardPopUpID = 'infoCard1PopUp';
-let popUpTitle = '1e pop up';
-let popUpInhoud = 'dit is tekst';
-let infoCardPositioningClass = 'stylingHeaderInfoCard'
+inputButtonID = 'inputButton1';
+infoCardPopUpID = 'infoCard1PopUp';
+popUpTitle = '1e pop up';
+popUpInhoud = 'dit is tekst';
+infoCardPositioningClass = 'stylingHeaderInfoCard'
 
 addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
