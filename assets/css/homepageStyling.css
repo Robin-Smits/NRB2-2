@@ -1,5 +1,6 @@
 body {
-    background-color: gray;
+    /*background-color: gray;*/
+    background-image: linear-gradient(gray,rgb(155, 157, 159),gray);
 }
 
 /* Page base */
@@ -138,7 +139,7 @@ body {
     margin-right: auto;
     font-family: 'Serif';
 }
-
+/* pop-up menu */
 .popUp {
     display: none;
     position: fixed;
@@ -187,7 +188,12 @@ body {
     margin-left: 40%;
     margin-top: 35%;
 }
-.stylingHeaderInfoCard {
+/* positioning of the info button */
+.stylingHeaderInfoCard1 {
+    text-align: center;
+    font-size: 40px;
+}
+.stylingHeaderInfoCard2 {
     text-align: center;
     font-size: 40px;
 }

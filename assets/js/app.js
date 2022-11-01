@@ -242,11 +242,17 @@ function addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioning
     createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud)
     makeButtonClickable(infoCardPopUpID, inputButtonID)
 }
-
+//reAssign the values
 inputButtonID = 'inputButton1';
 infoCardPopUpID = 'infoCard1PopUp';
 popUpTitle = '1e pop up';
 popUpInhoud = 'dit is tekst';
-infoCardPositioningClass = 'stylingHeaderInfoCard'
+infoCardPositioningClass = 'stylingHeaderInfoCard1';
 
+addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
+inputButtonID = 'inputButton2';
+infoCardPopUpID = 'infoCard1PopUp2';
+popUpTitle = '2e pop up';
+popUpInhoud = 'dit is tekst';
+infoCardPositioningClass = 'stylingHeaderInfoCard2';
 addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
