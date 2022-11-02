@@ -203,7 +203,7 @@ body {
     color: yellow;
 }
 /* I button locations */
-.positionIbutton {
+.positionIbutton1 {
     margin-left: 40%;
     margin-top: 35%;
 }
@@ -242,4 +242,86 @@ body {
 .positionIbutton10 {
     margin-left: 99%;
     margin-top: 35%;
+}
+
+.positionIbutton11 {
+    margin-left: 40%;
+    margin-top: 5%;
+}
+.positionIbutton12 {
+    margin-left: 30%;
+    margin-top: 5%;
+}
+.positionIbutton13 {
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.positionIbutton14 {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.positionIbutton15 {
+    margin-left: 50%;
+    margin-top: 5%;
+}
+.positionIbutton16 {
+    margin-left: 60%;
+    margin-top: 5%;
+}
+.positionIbutton17 {
+    margin-left: 70%;
+    margin-top: 5%;
+}
+.positionIbutton18 {
+    margin-left: 80%;
+    margin-top: 5%;
+}
+.positionIbutton19 {
+    margin-left: 90%;
+    margin-top: 5%;
+}
+.positionIbutton20 {
+    margin-left: 99%;
+    margin-top: 5%;
+}
+
+.positionIbutton21 {
+    margin-left: 40%;
+    margin-top: 65%;
+}
+.positionIbutton22 {
+    margin-left: 30%;
+    margin-top: 65%;
+}
+.positionIbutton23 {
+    margin-left: 20%;
+    margin-top: 65%;
+}
+.positionIbutton24 {
+    margin-left: 10%;
+    margin-top: 65%;
+}
+.positionIbutton25 {
+    margin-left: 50%;
+    margin-top: 65%;
+}
+.positionIbutton26 {
+    margin-left: 60%;
+    margin-top: 65%;
+}
+.positionIbutton27 {
+    margin-left: 70%;
+    margin-top: 65%;
+}
+.positionIbutton28 {
+    margin-left: 80%;
+    margin-top: 65%;
+}
+.positionIbutton29 {
+    margin-left: 90%;
+    margin-top: 65%;
+}
+.positionIbutton30 {
+    margin-left: 99%;
+    margin-top: 65%;
 }
