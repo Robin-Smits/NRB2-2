@@ -52,6 +52,8 @@ body {
 
 .nameInput {
     width: 90%;
+    height: 25px;
+    font-size: large;
 }
 
 .commentInput {
@@ -70,6 +72,21 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+    font-size: xx-large;
+}
+.userCommentOutput {
+    border-radius: 35px;
+    width: 1248px;
+    height: 30%;
+    padding: 7px;
+    text-align: center;
+    background-color: rgb(49, 47, 48);
+    color: white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    font-size: xx-large;
 }
 
 #comments {
@@ -80,15 +97,24 @@ body {
 .legend {
     margin-left: 16.06%;
     background-color: rgb(49, 47, 48);
-    width: 1264px;
+    width: 1248px;
     color: white;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    padding: 8px;
 }
-
+.popUpContentImage{
+    max-width: 500px;
+    min-width: 250px;
+    min-height: 100px;
+    max-height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .mapButtons {
     text-align: center;
     height: 45px;
@@ -129,7 +155,6 @@ body {
     margin-right: auto;
     height: 965px;
     width: 1264px;
-    opacity: 0.5;
 }
 
 .mapOverlayButton {
@@ -138,6 +163,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-family: 'Serif';
+}
+.checkboxStyle{
+    font-size: xx-large;
+    padding-left: 44%;
 }
 /* pop-up menu */
 .popUp {
@@ -152,6 +181,7 @@ body {
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0.9;
 }
 
 /* Modal Content */
@@ -324,4 +354,21 @@ body {
 .positionIbutton30 {
     margin-left: 99%;
     margin-top: 65%;
+}
+.checkBoxCheck {
+    height: 25px;
+    width: 25px;
+}
+.checkBoxButton {
+
+    height: 40px;
+    width: 100px;
+    font-size: xx-large;
+    margin: 5px;
+}
+.checkBoxButton2{
+
+    height: 40px;
+    width: 115px;
+    font-size: xx-large;
 }

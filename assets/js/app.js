@@ -81,6 +81,7 @@ function changeMapTodams() {
     changeMapTitle('Dams');
     // add info cards
     showDamsButtons();
+    createMapOverlay("./assets/images/recreationalAreas.png");
 }
 
 /**
@@ -91,7 +92,7 @@ function changeMapToarea() {
     changeMapTitle('Area restrictions');
     //add info cards
     showAreaButtons();
-    createMapOverlay("./assets/images/YvesTowns.png");
+    createMapOverlay("./assets/images/towns.png");
 };
 
 /**
@@ -130,7 +131,7 @@ function addCommentsLayout(firstName, lastName, organization, comment) {
     if ((firstName.length > 1 && lastName.length > 1) && (organization.length > 1 && comment.length > 1)) {
         commentDiv = document.createElement('div');
         src = document.getElementById('displayUserInput');
-        commentDiv.classList.add('userCommentInput');
+        commentDiv.classList.add('userCommentOutput');
         src.appendChild(commentDiv);
         //p
         commentUserName = document.createElement('p');
@@ -226,9 +227,10 @@ function createChangeButton(inputButtonID, buttonPositionStyle) {
  * @param {string} popUpContentStyling class with the styling of the pop-up
  * @param {class} infoCardPositioningClass positioning of the info button on the map
  * @param {string} popUpTitle the title of the map
+ * @param {string} connectToImage Link to the image that you want to display in the pop up
  * @param {string} popUpExplenation the info that the info card includes
  */
-function createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, popUpExplenation) {
+function createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, connectToImage, popUpExplenation) {
     popUpDiv = document.createElement('div');
     src = document.getElementById('mapDisplay');
     popUpDiv.setAttribute('id', infoCardPopUpID);
@@ -256,6 +258,11 @@ function createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningCl
     //div layer2
     div1 = document.createElement('div');
     mainDiv.appendChild(div1);
+    //img
+    popUpImg = document.createElement('img');
+    popUpImg.src = connectToImage;//'./assets/images/LegendPreset.png'
+    popUpImg.classList.add('popUpContentImage');
+    div1.appendChild(popUpImg);
     //p2
     div1P = document.createElement('p');
     div1P.innerHTML = popUpExplenation;
@@ -572,11 +579,12 @@ function makeButtonClickable() {
  * @param {class} popUpContentStyling the style with the looks of the info card
  * @param {class} infoCardPositioningClass The positioning on the map based on the contained info
  * @param {string} popUpTitle Title of the displayed map
+ * @param {string} connectToImage Link to the image that you want to display in the pop up
  * @param {string} popUpInhoud The text in the pop-up
  */
-function addFunctionalButton(inputButtonID, buttonPositionStyle, infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, popUpInhoud) {
+function addFunctionalButton(inputButtonID, buttonPositionStyle, infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, connectToImage, popUpInhoud) {
     createChangeButton(inputButtonID, buttonPositionStyle)
-    createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, popUpInhoud)
+    createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, connectToImage, popUpInhoud)
 }
 /**
  * Function that makes the inputbuttons of rivers disappear
@@ -688,40 +696,40 @@ function showAreaButtons() {
 }
 
 // add rivers buttons
-addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '1e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton3', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton4', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '4e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton5', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '5e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton6', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '6e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton7', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '7e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton8', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '8e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton9', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '9e pop up', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton10', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '10e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '1e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton3', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton4', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '4e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton5', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '5e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton6', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '6e pop up', './assets/images/49414.jpg','dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton7', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '7e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton8', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '8e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton9', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '9e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton10', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '10e pop up', './assets/images/49414.jpg', 'dit is tekst');
 
 // add dams buttons
-addFunctionalButton('inputButton2', 'positionIbutton11', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.1e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton12', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.2e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton13', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.3e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton14', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.4e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton15', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.5e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton16', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.6e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton17', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.7e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton18', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.8e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton19', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.9e pop up', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton20', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.10e pop up', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton11', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.1e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton12', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.2e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton13', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.3e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton14', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.4e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton15', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.5e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton16', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.6e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton17', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.7e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton18', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.8e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton19', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.9e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton20', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.10e pop up', './assets/images/49414.jpg', 'dit is tekst');
 
 // add Area buttons
-addFunctionalButton('inputButton3', 'positionIbutton21', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.1e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton22', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.2e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton23', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.3e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton24', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.4e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton25', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.5e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton26', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.6e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton27', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.7e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton28', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.8e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton29', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.9e pop up', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton30', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.10e pop up', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton21', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.1e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton22', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.2e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton23', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.3e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton24', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.4e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton25', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.5e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton26', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.6e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton27', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.7e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton28', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.8e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton29', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.9e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton30', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.10e pop up', './assets/images/49414.jpg', 'dit is tekst');
 
 makeButtonClickable();
 clearRiverButtons();

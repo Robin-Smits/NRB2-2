@@ -24,18 +24,18 @@
       </div>
     </div>
     <section class="legend">
-      <img src="Legenda" alt="legenda"><br>
-      <div>
-        <input type="checkbox" id="riversCheck" name="rivers" value="rivers">
+      <img src="./assets/images/LegendPreset.png" alt="legend"><br>
+      <div class="checkboxStyle">
+        <input type="checkbox" id="riversCheck" name="rivers" value="rivers" class="checkBoxCheck">
         <label for="vehicle1"> Rivers</label><br>
-        <input type="checkbox" id="damsCheck" name="dams" value="dams">
+        <input type="checkbox" id="damsCheck" name="dams" value="dams" class="checkBoxCheck">
         <label for="vehicle2"> Dams</label><br>
-        <input type="checkbox" id="areaCheck" name="area" value="area">
-        <label for="vehicle3"> area restrictions</label><br>
+        <input type="checkbox" id="areaCheck" name="area" value="area" class="checkBoxCheck">
+        <label for="vehicle3"> Area restrictions</label><br>
       </div>
       <div class="mapButtons">
-        <button type="button" id="basicBTN">load</button>
-        <button type="button" id="resetBTN">reset</button>
+        <button type="button" id="basicBTN" class="checkBoxButton">load</button>
+        <button type="button" id="resetBTN" class="checkBoxButton">reset</button>
       </div>
     </section>
     <section>
@@ -48,10 +48,10 @@
         <input type="text" id="organization" name="organization" value="" class="nameInput" maxlength="57"><br>
         <label for="comments">Comment:</label><br><!-- class="commentInput" -->
         <input type="text" id="comments" name="comments" value=""><br>
-        <button type="button" id="add-button" class="button ">Submit</button>
+        <button type="button" id="add-button" class="button, checkBoxButton2" >Submit</button>
       </form>
     </section>
-    <section class="userCommentInput">
+    <section class="userCommentOutput">
       <p><strong>Posted comments</strong></p>
     </section>
     <div id="displayUserInput">
