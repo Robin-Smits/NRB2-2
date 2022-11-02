@@ -11,7 +11,7 @@ let inputButtonID = '';
 let infoCardPopUpID = '';
 let popUpTitle = '';
 let popUpInhoud = '';
-let infoCardPositioningClass = ''
+let infoCardPositioningClass = '';
 
 
 basicButton.addEventListener('click', checkBoxInput); // changeMapToBasic
@@ -34,13 +34,13 @@ function checkBoxInput() {
         console.log('Dams Activate');
         changeMapTodams();
     } else {
-        console.log('Dams Inactive')
+        console.log('Dams Inactive');
     }
     if (checkBoxArea.checked == true) {
         console.log('Area Activate');
         changeMapToarea();
     } else {
-        console.log('Area Inactive')
+        console.log('Area Inactive');
     }
 }
 
@@ -52,9 +52,8 @@ function changeMapToRivers() {
     // add info cards
     showRiverButtons();
 
-    //createMapOverlay("./assets/images/river.png");
-    //changeMap = document.getElementById('changeMapDisplay');
-    //changeMap.src = "./assets/images/cleanMap.png"
+    changeMap = document.getElementById('changeMapDisplay');
+    changeMap.src = "./assets/images/YvesInfrastructure.png";
 };
 
 
@@ -68,10 +67,10 @@ function changeMapToBasic() {
     clearAreaButtons();
     uncheckAll();
 
-    //changeMap = document.getElementById('changeMapDisplay');
-    //changeMap.src = "./assets/images/beforeMap.png";
+    changeMap = document.getElementById('changeMapDisplay');
+    changeMap.src = "./assets/images/YvesBasicVersion.png";
 
-    //clearMapOverlays();
+    clearMapOverlays();
 };
 
 /**
@@ -92,6 +91,7 @@ function changeMapToarea() {
     changeMapTitle('Area restrictions');
     //add info cards
     showAreaButtons();
+    createMapOverlay("./assets/images/YvesTowns.png");
 };
 
 /**
@@ -181,7 +181,7 @@ function clearMapOverlays() {
  */
 function createMapOverlay(OverlaySource) {
     imgDiv = document.createElement('div');
-    source = document.getElementById('mapDisplay');
+    source = document.getElementById('mapDisplayOverlays');
     imgDiv.classList.add('mapOverlay');
     imgDiv.setAttribute('id', 'mapOverlay')
     source.appendChild(imgDiv);
