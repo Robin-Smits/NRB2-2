@@ -156,13 +156,14 @@ body {
 
 /* Modal Content */
 .popUp-inhoud {
-    background-color: rgb(49, 47, 48);
+    /*background-color: rgb(49, 47, 48);*/
+    /*color: white;*/
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     border-radius: 25px;
     width: 60%;
-    color: white;
+    
 }
 
 /* The Close Button */
@@ -184,10 +185,6 @@ body {
     margin-right: 10px;
 }
 
-.positionIbutton {
-    margin-left: 40%;
-    margin-top: 35%;
-}
 /* positioning of the info button */
 .stylingHeaderInfoCard1 {
     text-align: center;
@@ -196,4 +193,53 @@ body {
 .stylingHeaderInfoCard2 {
     text-align: center;
     font-size: 40px;
+}
+.popUp-content-styling{
+    background-color: rgb(49, 47, 48);
+    color: white;
+}
+.popUp-content-styling1{
+    background-color: green;
+    color: yellow;
+}
+/* I button locations */
+.positionIbutton {
+    margin-left: 40%;
+    margin-top: 35%;
+}
+.positionIbutton2 {
+    margin-left: 30%;
+    margin-top: 35%;
+}
+.positionIbutton3 {
+    margin-left: 20%;
+    margin-top: 35%;
+}
+.positionIbutton4 {
+    margin-left: 10%;
+    margin-top: 35%;
+}
+.positionIbutton5 {
+    margin-left: 50%;
+    margin-top: 35%;
+}
+.positionIbutton6 {
+    margin-left: 60%;
+    margin-top: 35%;
+}
+.positionIbutton7 {
+    margin-left: 70%;
+    margin-top: 35%;
+}
+.positionIbutton8 {
+    margin-left: 80%;
+    margin-top: 35%;
+}
+.positionIbutton9 {
+    margin-left: 90%;
+    margin-top: 35%;
+}
+.positionIbutton10 {
+    margin-left: 99%;
+    margin-top: 35%;
 }

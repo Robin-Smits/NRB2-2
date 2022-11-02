@@ -5,6 +5,31 @@ const areaButton = document.getElementById('areaBTN');
 const basicButton = document.getElementById('basicBTN');
 const addComment = document.getElementById('add-button');
 
+function checkBoxInput(){
+const checkBoxRivers = document.getElementById('riversCheck');
+const checkBoxDams = document.getElementById('damsCheck');
+const checkBoxArea = document.getElementById('areaCheck');
+if (checkBoxRivers.checked == true){
+    console.log('Rivers Activate');
+    changeMapToRivers();
+  } else {
+    console.log('Rivers Inactive')
+  }
+  if (checkBoxDams.checked == true){
+    console.log('Dams Activate');
+    changeMapTodams();
+  } else {
+    console.log('Dams Inactive')
+  }
+  if (checkBoxArea.checked == true){
+    console.log('Area Activate');
+    changeMapToarea();
+  } else {
+    console.log('Area Inactive')
+  }
+}
+
+
 let firstName = '';
 let lastName = '';
 let userComment = '';
@@ -18,24 +43,24 @@ let infoCardPositioningClass = ''
 riversButton.addEventListener('click', changeMapToRivers);
 damsButton.addEventListener('click', changeMapTodams);
 areaButton.addEventListener('click', changeMapToarea);
-basicButton.addEventListener('click', changeMapToBasic);
+basicButton.addEventListener('click', checkBoxInput); // changeMapToBasic
 addComment.addEventListener('click', addComments);
 
 /**
  * Function that makes an overlay with the river overview and shows it
  */
 function changeMapToRivers() {
-    createMapOverlay("./assets/images/river.png");
+    //createMapOverlay("./assets/images/river.png");
     changeMapTitle('Rivers');
     //changeMap = document.getElementById('changeMapDisplay');
     //changeMap.src = "./assets/images/cleanMap.png"
+    showInfo1Buttons();
 };
 
 /**
  * Function that makes all the overlays disappear and sets the map to the basic one
  */
 function changeMapToBasic() {
-    console.log('Basic works')
     changeMap = document.getElementById('changeMapDisplay');
     changeMap.src = "./assets/images/beforeMap.png"
     changeMapTitle('Base map');
@@ -46,16 +71,23 @@ function changeMapToBasic() {
  * Function that puts an overlay on of the dams
  */
 function changeMapTodams() {
-    createMapOverlay("./assets/images/river.png");
+    //createMapOverlay("./assets/images/river.png");
     changeMapTitle('Dams');
+
+    // add info cards
+    //remove buttons
 }
 
 /**
  * Function that makes a overlay appear with the area visual
  */
 function changeMapToarea() {
-    createMapOverlay("./assets/images/river.png");
+    //createMapOverlay("./assets/images/river.png");
     changeMapTitle('Area restrictions');
+    //add info cards
+
+    //remove buttons
+    clearInfo1Buttons()
 };
 
 /**
@@ -156,25 +188,40 @@ function changeMapTitle(newMapTitle) {
 }
 
 /**
- * Creates the button to change the table
+ * Function that makes a new info card for the map and sets its position
+ * @param {string} inputButtonID The id that you give the button
+ * @param {class} buttonPositionStyle The style with the x and y position of the I on the map
  */
-function createChangeButton(inputButtonID) {
-    inputButton = document.createElement('button');
+function createChangeButton(inputButtonID, buttonPositionStyle) {
+    buttonDiv = document.createElement('div');
     src = document.getElementById('mapDisplay');
+    buttonDiv.setAttribute('id', `div${inputButtonID}`)
+    src.appendChild(buttonDiv);
+
+    inputButton = document.createElement('button');
     inputButton.setAttribute('id', inputButtonID);
-    inputButton.classList.add('positionIbutton');
+    inputButton.classList.add(buttonPositionStyle);
     inputButton.classList.add('mapOverlayButton');
     inputButton.innerHTML = 'I';
-    src.appendChild(inputButton);
+    buttonDiv.appendChild(inputButton);
+
+    //inputButton = document.createElement('button');
+    //src = document.getElementById('mapDisplay');
+    //inputButton.setAttribute('id', inputButtonID);
+    //inputButton.classList.add('positionIbutton');
+    //inputButton.classList.add('mapOverlayButton');
+    //inputButton.innerHTML = 'I';
+    //src.appendChild(inputButton);
 }
 /**
  * Function that makes the pop-up card and displays it
  * @param {string} infoCardPopUpID id that the element gets
+ * @param {string} popUpContentStyling class with the styling of the pop-up
  * @param {class} infoCardPositioningClass positioning of the info button on the map
  * @param {string} popUpTitle the title of the map
  * @param {string} popUpExplenation the info that the info card includes
  */
-function createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpExplenation) {
+function createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, popUpExplenation) {
     popUpDiv = document.createElement('div');
     src = document.getElementById('mapDisplay');
     popUpDiv.setAttribute('id', infoCardPopUpID);
@@ -182,11 +229,13 @@ function createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popU
     src.appendChild(popUpDiv);
     //main div
     mainDiv = document.createElement('div');
+    mainDiv.classList.add(popUpContentStyling);
     mainDiv.classList.add('popUp-inhoud');
     popUpDiv.appendChild(mainDiv);
     //span
     span = document.createElement('span');
     span.classList.add('popUp-sluiten');
+    span.setAttribute('id', `${infoCardPopUpID}Content`);
     span.innerHTML = "&times";
     mainDiv.appendChild(span);
     //p
@@ -206,29 +255,120 @@ function createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popU
     div1.appendChild(div1P);
 }
 /**
- * function that makes the button clickable
- * @param {string} popUpMenuID The id of the menue of the pop-up
- * @param {string} inputButtonID the id of the input button
+ * Function that makes all the buttons clickable
  */
-function makeButtonClickable(popUpMenuID, inputButtonID) {
-    popUpMenu = document.getElementById(popUpMenuID);
-    popUpButton = document.getElementById(inputButtonID);
-    popUpMenuContent = document.getElementsByClassName('popUp-sluiten')[0];
+function makeButtonClickable() {
+    var modal = document.getElementsByClassName('popUp');
+    // Get the button that opens the modal
+    var btn = document.getElementsByClassName('mapOverlayButton');
+    console.log(btn);
 
-    popUpButton.onclick = function () {
-        popUpMenu.style.display = 'block';
-    };
 
-    popUpMenuContent.onclick = function () {
-        popUpMenu.style.display = 'none';
-    };
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName('popUp-sluiten');
 
+    // When the user clicks the button, open the modal 
+    btn[0].onclick = function () {
+        modal[0].style.display = "block";
+    }
+
+    btn[1].onclick = function () {
+        modal[1].style.display = "block";
+    }
+    btn[2].onclick = function () {
+        modal[2].style.display = "block";
+    }
+    btn[3].onclick = function () {
+        modal[3].style.display = "block";
+    }
+    btn[4].onclick = function () {
+        modal[4].style.display = "block";
+    }
+    btn[5].onclick = function () {
+        modal[5].style.display = "block";
+    }
+    btn[6].onclick = function () {
+        modal[6].style.display = "block";
+    }
+    btn[7].onclick = function () {
+        modal[7].style.display = "block";
+    }
+    btn[7].onclick = function () {
+        modal[7].style.display = "block";
+    }
+    btn[8].onclick = function () {
+        modal[8].style.display = "block";
+    }
+    btn[9].onclick = function () {
+        modal[9].style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span[0].onclick = function () {
+        modal[0].style.display = "none";
+    }
+    span[1].onclick = function () {
+        modal[1].style.display = "none";
+    }
+    span[2].onclick = function () {
+        modal[2].style.display = "none";
+    }
+    span[3].onclick = function () {
+        modal[3].style.display = "none";
+    }
+    span[4].onclick = function () {
+        modal[4].style.display = "none";
+    }
+    span[5].onclick = function () {
+        modal[5].style.display = "none";
+    }
+    span[6].onclick = function () {
+        modal[6].style.display = "none";
+    }
+    span[7].onclick = function () {
+        modal[7].style.display = "none";
+    }
+    span[8].onclick = function () {
+        modal[8].style.display = "none";
+    }
+    span[9].onclick = function () {
+        modal[9].style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-        if (event.target == popUpMenu) {
-            popUpMenu.style.display = 'none';
+        if (event.target == modal[0]) {
+            modal[0].style.display = "none";
+        }
+        if (event.target == modal[1]) {
+            modal[1].style.display = "none";
+        }
+        if (event.target == modal[2]) {
+            modal[2].style.display = "none";
+        }
+        if (event.target == modal[3]) {
+            modal[3].style.display = "none";
+        }
+        if (event.target == modal[4]) {
+            modal[4].style.display = "none";
+        }
+        if (event.target == modal[5]) {
+            modal[5].style.display = "none";
+        }
+        if (event.target == modal[6]) {
+            modal[6].style.display = "none";
+        }
+        if (event.target == modal[7]) {
+            modal[7].style.display = "none";
+        }
+        if (event.target == modal[8]) {
+            modal[8].style.display = "none";
+        }
+        if (event.target == modal[9]) {
+            modal[9].style.display = "none";
         }
     }
-};
+}
+
 /**
  * Function where you can create an entire new pop-up menu 
  * @param {string} inputButtonID The id of the new button on the map
@@ -237,22 +377,52 @@ function makeButtonClickable(popUpMenuID, inputButtonID) {
  * @param {string} popUpTitle Title of the displayed map
  * @param {string} popUpInhoud The text in the pop-up
  */
-function addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud) {
-    createChangeButton(inputButtonID)
-    createPopUp(infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud)
-    makeButtonClickable(infoCardPopUpID, inputButtonID)
+function addFunctionalButton(inputButtonID, buttonPositionStyle, infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, popUpInhoud) {
+    createChangeButton(inputButtonID, buttonPositionStyle)
+    createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, popUpInhoud)
+    //makeButtonClickable2(infoCardPopUpID, inputButtonID);
 }
-//reAssign the values
-inputButtonID = 'inputButton1';
-infoCardPopUpID = 'infoCard1PopUp';
-popUpTitle = '1e pop up';
-popUpInhoud = 'dit is tekst';
-infoCardPositioningClass = 'stylingHeaderInfoCard1';
 
-addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
-inputButtonID = 'inputButton2';
-infoCardPopUpID = 'infoCard1PopUp2';
-popUpTitle = '2e pop up';
-popUpInhoud = 'dit is tekst';
-infoCardPositioningClass = 'stylingHeaderInfoCard2';
-addFunctionalButton(inputButtonID, infoCardPopUpID, infoCardPositioningClass, popUpTitle, popUpInhoud);
+function clearInfo1Buttons() {
+    for (i = 0; i < 50; i++) {
+        inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+        console.log(inputButtonHide);
+        inputButtonHide[0].style.display = 'none';
+        inputButtonHide[1].style.display = 'none';
+        inputButtonHide[2].style.display = 'none';
+        inputButtonHide[3].style.display = 'none';
+        inputButtonHide[4].style.display = 'none';
+        inputButtonHide[5].style.display = 'none';
+        inputButtonHide[6].style.display = 'none';
+        inputButtonHide[7].style.display = 'none';
+        inputButtonHide[8].style.display = 'none';
+        inputButtonHide[9].style.display = 'none';
+    }
+}
+function showInfo1Buttons() {
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    console.log(inputButtonHide);
+    inputButtonHide[0].style.display = 'block';
+    inputButtonHide[1].style.display = 'block';
+    inputButtonHide[2].style.display = 'block';
+    inputButtonHide[3].style.display = 'block';
+    inputButtonHide[4].style.display = 'block';
+    inputButtonHide[5].style.display = 'block';
+    inputButtonHide[6].style.display = 'block';
+    inputButtonHide[7].style.display = 'block';
+    inputButtonHide[8].style.display = 'block';
+    inputButtonHide[9].style.display = 'block';
+}
+
+addFunctionalButton('inputButton1', 'positionIbutton', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '1e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton3', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton4', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '4e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton5', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '5e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton6', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '6e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton7', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '7e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton8', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '8e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton9', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '9e pop up', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton10', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '10e pop up', 'dit is tekst');
+makeButtonClickable();
+clearInfo1Buttons();
