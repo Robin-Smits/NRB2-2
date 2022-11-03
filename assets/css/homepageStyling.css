@@ -1,6 +1,6 @@
 body {
     /*background-color: gray;*/
-    background-image: linear-gradient(gray,rgb(155, 157, 159),gray);
+    background-image: linear-gradient(gray, rgb(155, 157, 159), gray);
 }
 
 /* Page base */
@@ -74,6 +74,7 @@ body {
     margin-top: 15px;
     font-size: xx-large;
 }
+
 .userCommentOutput {
     border-radius: 35px;
     width: 1248px;
@@ -106,7 +107,8 @@ body {
     margin-right: auto;
     padding: 8px;
 }
-.popUpContentImage{
+
+.popUpContentImage {
     max-width: 500px;
     min-width: 250px;
     min-height: 100px;
@@ -115,6 +117,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+
 .mapButtons {
     text-align: center;
     height: 45px;
@@ -164,10 +167,33 @@ body {
     margin-right: auto;
     font-family: 'Serif';
 }
-.checkboxStyle{
+
+.checkboxStyle {
     font-size: xx-large;
     padding-left: 44%;
 }
+
+.checkBoxCheck {
+    height: 25px;
+    width: 25px;
+}
+
+.checkBoxButton {
+
+    height: 40px;
+    width: 100px;
+    font-size: xx-large;
+    margin: 5px;
+}
+
+.checkBoxButton2 {
+
+    height: 40px;
+    width: 115px;
+    font-size: xx-large;
+}
+
+/* ALL POP-UP STYLES
 /* pop-up menu */
 .popUp {
     display: none;
@@ -193,7 +219,7 @@ body {
     border: 1px solid #888;
     border-radius: 25px;
     width: 60%;
-    
+
 }
 
 /* The Close Button */
@@ -215,160 +241,23 @@ body {
     margin-right: 10px;
 }
 
-/* positioning of the info button */
+/* Styling of the info cards */
 .stylingHeaderInfoCard1 {
     text-align: center;
     font-size: 40px;
 }
+
 .stylingHeaderInfoCard2 {
     text-align: center;
     font-size: 40px;
 }
-.popUp-content-styling{
+
+.popUp-content-styling {
     background-color: rgb(49, 47, 48);
     color: white;
 }
-.popUp-content-styling1{
+
+.popUp-content-styling1 {
     background-color: green;
     color: yellow;
-}
-/* I button locations */
-.positionIbutton1 {
-    margin-left: 40%;
-    margin-top: 35%;
-}
-.positionIbutton2 {
-    margin-left: 30%;
-    margin-top: 35%;
-}
-.positionIbutton3 {
-    margin-left: 20%;
-    margin-top: 35%;
-}
-.positionIbutton4 {
-    margin-left: 10%;
-    margin-top: 35%;
-}
-.positionIbutton5 {
-    margin-left: 50%;
-    margin-top: 35%;
-}
-.positionIbutton6 {
-    margin-left: 60%;
-    margin-top: 35%;
-}
-.positionIbutton7 {
-    margin-left: 70%;
-    margin-top: 35%;
-}
-.positionIbutton8 {
-    margin-left: 80%;
-    margin-top: 35%;
-}
-.positionIbutton9 {
-    margin-left: 90%;
-    margin-top: 35%;
-}
-.positionIbutton10 {
-    margin-left: 99%;
-    margin-top: 35%;
-}
-
-.positionIbutton11 {
-    margin-left: 40%;
-    margin-top: 5%;
-}
-.positionIbutton12 {
-    margin-left: 30%;
-    margin-top: 5%;
-}
-.positionIbutton13 {
-    margin-left: 20%;
-    margin-top: 5%;
-}
-.positionIbutton14 {
-    margin-left: 10%;
-    margin-top: 5%;
-}
-.positionIbutton15 {
-    margin-left: 50%;
-    margin-top: 5%;
-}
-.positionIbutton16 {
-    margin-left: 60%;
-    margin-top: 5%;
-}
-.positionIbutton17 {
-    margin-left: 70%;
-    margin-top: 5%;
-}
-.positionIbutton18 {
-    margin-left: 80%;
-    margin-top: 5%;
-}
-.positionIbutton19 {
-    margin-left: 90%;
-    margin-top: 5%;
-}
-.positionIbutton20 {
-    margin-left: 99%;
-    margin-top: 5%;
-}
-
-.positionIbutton21 {
-    margin-left: 40%;
-    margin-top: 65%;
-}
-.positionIbutton22 {
-    margin-left: 30%;
-    margin-top: 65%;
-}
-.positionIbutton23 {
-    margin-left: 20%;
-    margin-top: 65%;
-}
-.positionIbutton24 {
-    margin-left: 10%;
-    margin-top: 65%;
-}
-.positionIbutton25 {
-    margin-left: 50%;
-    margin-top: 65%;
-}
-.positionIbutton26 {
-    margin-left: 60%;
-    margin-top: 65%;
-}
-.positionIbutton27 {
-    margin-left: 70%;
-    margin-top: 65%;
-}
-.positionIbutton28 {
-    margin-left: 80%;
-    margin-top: 65%;
-}
-.positionIbutton29 {
-    margin-left: 90%;
-    margin-top: 65%;
-}
-.positionIbutton30 {
-    margin-left: 99%;
-    margin-top: 65%;
-}
-.checkBoxCheck {
-    height: 25px;
-    width: 25px;
-}
-.checkBoxButton {
-
-    height: 40px;
-    width: 100px;
-    font-size: xx-large;
-    margin: 5px;
-}
-.checkBoxButton2{
-
-    height: 40px;
-    width: 115px;
-    font-size: xx-large;
 }
