@@ -18,7 +18,7 @@ basicButton.addEventListener('click', checkBoxInput); // changeMapToBasic
 resetButton.addEventListener('click', changeMapToBasic);
 addComment.addEventListener('click', addComments);
 /**
- * Function that retrieves the users output from the checkboxes
+ * Function that retrieves the users output from the checkboxes and makes all checkboxes work and do their job
  */
 function checkBoxInput() {
     const checkBoxRivers = document.getElementById('riversCheck');
@@ -74,8 +74,6 @@ function changeMapToBasic() {
     uncheckAll();
     // clear all overlays
     clearMapOverlays();
-    //changeMap = document.getElementById('changeMapDisplay');
-    //changeMap.src = "./assets/images/YvesBasicVersion.png";
 };
 
 /**
@@ -127,11 +125,10 @@ function changeMapToInformation() {
  * Function that makes the checkboxes empty
  */
 function uncheckAll() {
-    document.querySelectorAll('input[type="checkbox"]')
-        .forEach(el => el.checked = false);
+    document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
 }
 
-document.querySelector('button').addEventListener('click', uncheckAll)
+document.querySelector('button').addEventListener('click', uncheckAll);
 
 /**
  * Function that gets the inputted data and makes a new comment with it.
@@ -180,7 +177,7 @@ function addCommentsLayout(firstName, lastName, organization, comment) {
     } else {
         alert("Your inputs didn't meet the requirements. The requerements are at least one character");
     }
-    clearInputFields()
+    clearInputFields();
 };
 
 /**
@@ -212,12 +209,12 @@ function createMapOverlay(OverlaySource) {
     imgDiv = document.createElement('div');
     source = document.getElementById('mapDisplayOverlays');
     imgDiv.classList.add('mapOverlay');
-    imgDiv.setAttribute('id', 'mapOverlay')
+    imgDiv.setAttribute('id', 'mapOverlay');
     source.appendChild(imgDiv);
     displayRivers = document.createElement('img');
     displayRivers.src = OverlaySource;
     displayRivers.classList.add('maps');
-    displayRivers.setAttribute('alt', 'map')
+    displayRivers.setAttribute('alt', 'map');
     imgDiv.appendChild(displayRivers);
 }
 
@@ -238,7 +235,7 @@ function changeMapTitle(newMapTitle) {
 function createChangeButton(inputButtonID, buttonPositionStyle) {
     buttonDiv = document.createElement('div');
     src = document.getElementById('mapDisplay');
-    buttonDiv.setAttribute('id', `div${inputButtonID}`)
+    buttonDiv.setAttribute('id', `div${inputButtonID}`);
     src.appendChild(buttonDiv);
 
     inputButton = document.createElement('button');
@@ -444,9 +441,6 @@ function makeButtonClickable() {
         if (event.target == modal[12]) {
             modal[12].style.display = "none";
         }
-        if (event.target == modal[13]) {
-            modal[13].style.display = "none";
-        }
     }
 }
 
@@ -551,7 +545,6 @@ function showInformationButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     inputButtonHide[11].style.display = 'block';
     inputButtonHide[12].style.display = 'block';
-    inputButtonHide[13].style.display = 'block';
 }
 /**
  * Function that makes the inputbuttons of information disappear
@@ -561,17 +554,16 @@ function clearInformationButtons() {
     //style change
     inputButtonHide[11].style.display = 'none';
     inputButtonHide[12].style.display = 'none';
-    inputButtonHide[13].style.display = 'none';
 }
 // add existing waterbody (rivers) buttons
 addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp2', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Schenge', './assets/images/schenge.jpg', 'The majority of the time, water plants and other species do not have enough habitat.<br> Low biodiversity is the result.<br> Connected to Veerse Meer, the elevation of Schenge is about 0.3 meters NAP, annually increasing.<br> The water quality in the Schenge region generally falls short of the standards.<br> It is mostly affected by eutrophication, pollution with some heavy metals and pesticides, and inadequate access for migratory fish.');
 addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/zwaakseWeel.jpg', 'The Zwaakse Weel channel is made up of wetlands, open water devoid of aquatic life.<br> Zwaakse Weel has a low elevation of -0.5 meters NAP.<br> The water is slightly brackish, and particularly nutrient rich.<br> The quality of water is fresh enough to irrigate a wide range of crops, especially drought-sensitive crops.');
 
 // add reacreational area (dams) buttons
-addFunctionalButton('inputButton2', 'positionIbutton2', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', '‘s-Heer Arendskerke', './assets/images/ArendskerkeNew.jpg', 'A new recreational area has been added to the west of ‘s-Heer Arendskerke.<br> In this location, close to the highway the river will split to create an eco-friendly environment in the new area.');
-addFunctionalButton('inputButton2', 'positionIbutton3', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'Nieuw Heinkenszand', './assets/images/HeinkenszandNew.png.jpg', 'A new recreational area has been added to the east of Heinkenszand.<br> In this location, the river will split to create an eco-friendly environment in the new area.');
-addFunctionalButton('inputButton2', 'positionIbutton4', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'Nieuw Nisse', './assets/images/NisseNew.jpg', 'A new recreational area has been added to the south-west of Nisse, in the bend of the river.<br> In this location, the river will split to create an eco-friendly environment in the new area.');
-addFunctionalButton('inputButton2', 'positionIbutton5', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'Nieuw ‘s-Gravenpolder', './assets/images/GravenpolderNew.jpg', 'A new recreational area has been added in the empty farmlands between the town of ‘s-Gravenpolder and ’de Zwaakse Weel’.<br> In this location, the river will split to create an eco-friendly environment in the new area.');
+addFunctionalButton('inputButton2', 'positionIbutton2', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', '‘s-Heer Arendskerke', './assets/images/ArendskerkeNew.png', 'A new recreational area has been added to the west of ‘s-Heer Arendskerke.<br> In this location, close to the highway the river will split to create an eco-friendly environment in the new area.');
+addFunctionalButton('inputButton2', 'positionIbutton3', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'Nieuw Heinkenszand', './assets/images/HeinkenszandNew.png', 'A new recreational area has been added to the east of Heinkenszand.<br> In this location, the river will split to create an eco-friendly environment in the new area.');
+addFunctionalButton('inputButton2', 'positionIbutton4', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'Nieuw Nisse', './assets/images/NisseNew.png', 'A new recreational area has been added to the south-west of Nisse, in the bend of the river.<br> In this location, the river will split to create an eco-friendly environment in the new area.');
+addFunctionalButton('inputButton2', 'positionIbutton5', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'Nieuw ‘s-Gravenpolder', './assets/images/GravenpolderNew.png', 'A new recreational area has been added in the empty farmlands between the town of ‘s-Gravenpolder and ’de Zwaakse Weel’.<br> In this location, the river will split to create an eco-friendly environment in the new area.');
 
 // add town buttons
 addFunctionalButton('inputButton3', 'positionIbutton6', 'infoCard3PopUp', 'popUp-content-styling2', 'stylingHeaderInfoCard1', "s'-Heer Arendskerke", './assets/images/Arendskerke.png', 'There is a scarcity of green and recreational spaces in the village of ‘s-Heer Arendskerke, which isn’t intertwined with community culture, resulting in an underdeveloped sustainable environment.');
@@ -586,7 +578,6 @@ addFunctionalButton('inputButton2', 'positionIbutton10', 'infoCard2PopUp', 'popU
 
 addFunctionalButton('inputButton1', 'positionIbutton11', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Culvert', './assets/images/49414.jpg', 'The use of a culvert has been chosen as the best option to cross the roads that are in the way of the connection route.<br> Due to the soft soil surrounding the area (marine clay), box culvert has been chosen, as it can also hold heavy loads.<br> Since the type of soil is soft, it can be strengthened by use of wick drain or Prefabricated Vertical Drain (PVD) which can take water out of the soft soil.');
 addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Canal shape', './assets/images/49414.jpg', 'The earthen canal will be made in a trapezoidal shape and considering the soil, will need to have a slope between 18-20 degrees.');
-addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Trees', './assets/images/49414.jpg', 'dit is tekst');
 
 makeButtonClickable();
 clearRiverButtons();
