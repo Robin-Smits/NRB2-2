@@ -112,7 +112,7 @@ function changeMapToarea() {
 function changeMapToBuffer() {
     changeMapTitle('Buffer');
     showBufferButtons();
-    //createMapOverlay("./assets/images/towns.png");
+    createMapOverlay("./assets/images/buffers.png");
 };
 /**
  * Function that makes a overlay appear with the information visual

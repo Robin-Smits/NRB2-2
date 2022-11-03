@@ -256,15 +256,15 @@ body {
 }
 
 .popUp-content-styling1 {
-    background-color: rgba(0, 128, 0, 0.500);
-    color: black;
+    background-color: rgba(183, 220, 0, 0.5);
+    color: white;
 }
 .popUp-content-styling2 {
     background-color: rgba(255, 115, 0, 0.500);
     color: white;
 }
 .popUp-content-styling3 {
-    background-color: rgba(117, 63, 2, 0.500);
+    background-color: rgba(164, 0, 0, 0.5);
     color: white;
 }
 .popUp-content-styling4 {
