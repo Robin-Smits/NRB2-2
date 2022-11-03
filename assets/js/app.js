@@ -564,7 +564,6 @@ function clearInformationButtons() {
     inputButtonHide[13].style.display = 'none';
 }
 // add existing waterbody (rivers) buttons
-//addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'this tekst is so long that it will break up into multiple rows becuase that makes the entire text visible and keeps the page looking clean and i need to add even more text to do that');
 addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp2', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Schenge', './assets/images/schenge.jpg', 'The majority of the time, water plants and other species do not have enough habitat.<br> Low biodiversity is the result.<br> Connected to Veerse Meer, the elevation of Schenge is about 0.3 meters NAP, annually increasing.<br> The water quality in the Schenge region generally falls short of the standards.<br> It is mostly affected by eutrophication, pollution with some heavy metals and pesticides, and inadequate access for migratory fish.');
 addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/zwaakseWeel.jpg', 'The Zwaakse Weel channel is made up of wetlands, open water devoid of aquatic life.<br> Zwaakse Weel has a low elevation of -0.5 meters NAP.<br> The water is slightly brackish, and particularly nutrient rich.<br> The quality of water is fresh enough to irrigate a wide range of crops, especially drought-sensitive crops.');
 
@@ -588,10 +587,6 @@ addFunctionalButton('inputButton2', 'positionIbutton10', 'infoCard2PopUp', 'popU
 addFunctionalButton('inputButton1', 'positionIbutton11', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Culvert', './assets/images/49414.jpg', 'The use of a culvert has been chosen as the best option to cross the roads that are in the way of the connection route.<br> Due to the soft soil surrounding the area (marine clay), box culvert has been chosen, as it can also hold heavy loads.<br> Since the type of soil is soft, it can be strengthened by use of wick drain or Prefabricated Vertical Drain (PVD) which can take water out of the soft soil.');
 addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Canal shape', './assets/images/49414.jpg', 'The earthen canal will be made in a trapezoidal shape and considering the soil, will need to have a slope between 18-20 degrees.');
 addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Trees', './assets/images/49414.jpg', 'dit is tekst');
-//addFunctionalButton('inputButton1', 'positionIbutton18', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', ' clean button', './assets/images/49414.jpg', 'dit is tekst');
-//addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterlevel', './assets/images/49414.jpg', 'dit is tekst');
-//addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterquality', './assets/images/49414.jpg', 'dit is tekst');
-//addFunctionalButton('inputButton1', 'positionIbutton14', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Width and Depth', './assets/images/49414.jpg', 'dit is tekst');
 
 makeButtonClickable();
 clearRiverButtons();
