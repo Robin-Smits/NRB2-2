@@ -48,12 +48,12 @@ function checkBoxInput() {
  * Function that makes an overlay with the river overview and shows it
  */
 function changeMapToRivers() {
-    changeMapTitle('Rivers');
+    changeMapTitle('Existing Waterbodies');
     // add info cards
     showRiverButtons();
-
-    changeMap = document.getElementById('changeMapDisplay');
-    changeMap.src = "./assets/images/YvesInfrastructure.png";
+    createMapOverlay("./assets/images/existingWaterBodys.png");
+    //changeMap = document.getElementById('changeMapDisplay');
+    //changeMap.src = "./assets/images/YvesInfrastructure.png";
 };
 
 
@@ -78,7 +78,7 @@ function changeMapToBasic() {
  */
 function changeMapTodams() {
     //createMapOverlay("./assets/images/river.png");
-    changeMapTitle('Dams');
+    changeMapTitle('Recreational areas');
     // add info cards
     showDamsButtons();
     createMapOverlay("./assets/images/recreationalAreas.png");
@@ -89,7 +89,7 @@ function changeMapTodams() {
  */
 function changeMapToarea() {
     //createMapOverlay("./assets/images/river.png");
-    changeMapTitle('Area restrictions');
+    changeMapTitle('Towns');
     //add info cards
     showAreaButtons();
     createMapOverlay("./assets/images/towns.png");
@@ -696,9 +696,9 @@ function showAreaButtons() {
 }
 
 // add rivers buttons
-addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '1e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton3', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', 'Schenge', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton3', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
 addFunctionalButton('inputButton1', 'positionIbutton4', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '4e pop up', './assets/images/49414.jpg', 'dit is tekst');
 addFunctionalButton('inputButton1', 'positionIbutton5', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '5e pop up', './assets/images/49414.jpg', 'dit is tekst');
 addFunctionalButton('inputButton1', 'positionIbutton6', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '6e pop up', './assets/images/49414.jpg','dit is tekst');
@@ -721,7 +721,7 @@ addFunctionalButton('inputButton2', 'positionIbutton20', 'infoCard2PopUp2', 'pop
 
 // add Area buttons
 addFunctionalButton('inputButton3', 'positionIbutton21', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.1e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton22', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.2e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton22', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', 'HeinKenszand', './assets/images/49414.jpg', 'dit is tekst');
 addFunctionalButton('inputButton3', 'positionIbutton23', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.3e pop up', './assets/images/49414.jpg', 'dit is tekst');
 addFunctionalButton('inputButton3', 'positionIbutton24', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.4e pop up', './assets/images/49414.jpg', 'dit is tekst');
 addFunctionalButton('inputButton3', 'positionIbutton25', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.5e pop up', './assets/images/49414.jpg', 'dit is tekst');
