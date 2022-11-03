@@ -356,21 +356,6 @@ function makeButtonClickable() {
     btn[13].onclick = function () {
         modal[13].style.display = "block";
     }
-    btn[14].onclick = function () {
-        modal[14].style.display = "block";
-    }
-    btn[15].onclick = function () {
-        modal[15].style.display = "block";
-    }
-    btn[16].onclick = function () {
-        modal[16].style.display = "block";
-    }
-    btn[17].onclick = function () {
-        modal[17].style.display = "block";
-    }
-    btn[18].onclick = function () {
-        modal[18].style.display = "block";
-    }
     // When the user clicks on <span> (x), close the modal
     // Rivers
     span[0].onclick = function () {
@@ -415,21 +400,6 @@ function makeButtonClickable() {
     }
     span[13].onclick = function () {
         modal[13].style.display = "none";
-    }
-    span[14].onclick = function () {
-        modal[14].style.display = "none";
-    }
-    span[15].onclick = function () {
-        modal[15].style.display = "none";
-    }
-    span[16].onclick = function () {
-        modal[16].style.display = "none";
-    }
-    span[17].onclick = function () {
-        modal[17].style.display = "none";
-    }
-    span[18].onclick = function () {
-        modal[18].style.display = "none";
     }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -477,21 +447,6 @@ function makeButtonClickable() {
         if (event.target == modal[13]) {
             modal[13].style.display = "none";
         }
-        if (event.target == modal[14]) {
-            modal[14].style.display = "none";
-        }
-        if (event.target == modal[15]) {
-            modal[15].style.display = "none";
-        }
-        if (event.target == modal[16]) {
-            modal[16].style.display = "none";
-        }
-        if (event.target == modal[17]) {
-            modal[17].style.display = "none";
-        }
-        if (event.target == modal[18]) {
-            modal[18].style.display = "none";
-        }
     }
 }
 
@@ -519,7 +474,6 @@ function clearRiverButtons() {
     //style change
     inputButtonHide[0].style.display = 'none';
     inputButtonHide[1].style.display = 'none';
-    inputButtonHide[2].style.display = 'none';
 }
 /**
  * Function that makes the inputbuttons of rivers appear
@@ -529,7 +483,6 @@ function showRiverButtons() {
     //style change
     inputButtonHide[0].style.display = 'block';
     inputButtonHide[1].style.display = 'block';
-    inputButtonHide[2].style.display = 'block';
 }
 /**
  * Function that makes the inputbuttons of dams disappear
@@ -537,10 +490,10 @@ function showRiverButtons() {
 function clearDamsButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     //style change
+    inputButtonHide[2].style.display = 'none';
     inputButtonHide[3].style.display = 'none';
     inputButtonHide[4].style.display = 'none';
     inputButtonHide[5].style.display = 'none';
-    inputButtonHide[6].style.display = 'none';
 }
 /**
  * Function that makes the inputbuttons of dams appear
@@ -548,10 +501,10 @@ function clearDamsButtons() {
 function showDamsButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     //style change
+    inputButtonHide[2].style.display = 'block';
     inputButtonHide[3].style.display = 'block';
     inputButtonHide[4].style.display = 'block';
     inputButtonHide[5].style.display = 'block';
-    inputButtonHide[6].style.display = 'block';
 }
 /**
  * Function that makes the inputbuttons of area disappear
@@ -559,10 +512,10 @@ function showDamsButtons() {
 function clearAreaButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     //style change
+    inputButtonHide[6].style.display = 'none';
     inputButtonHide[7].style.display = 'none';
     inputButtonHide[8].style.display = 'none';
     inputButtonHide[9].style.display = 'none';
-    inputButtonHide[10].style.display = 'none';
 }
 /**
  * Function that makes the inputbuttons of area appear
@@ -570,10 +523,10 @@ function clearAreaButtons() {
 function showAreaButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     //style change
+    inputButtonHide[6].style.display = 'block';
     inputButtonHide[7].style.display = 'block';
     inputButtonHide[8].style.display = 'block';
     inputButtonHide[9].style.display = 'block';
-    inputButtonHide[10].style.display = 'block';
 }
 /**
  * Function that makes the inputbuttons of buffer appear
@@ -581,7 +534,7 @@ function showAreaButtons() {
 function showBufferButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     //style change
-    inputButtonHide[11].style.display = 'block';
+    inputButtonHide[10].style.display = 'block';
 }
 /**
  * Function that makes the inputbuttons of buffer disappear
@@ -589,20 +542,16 @@ function showBufferButtons() {
 function clearBufferButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     //style change
-    inputButtonHide[11].style.display = 'none';
+    inputButtonHide[10].style.display = 'none';
 }
 /**
  * Function that makes the inputbuttons of information appear
  */
 function showInformationButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    inputButtonHide[11].style.display = 'block';
     inputButtonHide[12].style.display = 'block';
     inputButtonHide[13].style.display = 'block';
-    inputButtonHide[14].style.display = 'block';
-    inputButtonHide[15].style.display = 'block';
-    inputButtonHide[16].style.display = 'block';
-    inputButtonHide[17].style.display = 'block';
-    inputButtonHide[18].style.display = 'block';
 }
 /**
  * Function that makes the inputbuttons of information disappear
@@ -610,43 +559,39 @@ function showInformationButtons() {
 function clearInformationButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     //style change
+    inputButtonHide[11].style.display = 'none';
     inputButtonHide[12].style.display = 'none';
     inputButtonHide[13].style.display = 'none';
-    inputButtonHide[14].style.display = 'none';
-    inputButtonHide[15].style.display = 'none';
-    inputButtonHide[16].style.display = 'none';
-    inputButtonHide[17].style.display = 'none';
-    inputButtonHide[18].style.display = 'none';
 }
 // add existing waterbody (rivers) buttons
-addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'this tekst is so long that it will break up into multiple rows becuase that makes the entire text visible and keeps the page looking clean and i need to add even more text to do that');
-addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp2', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Schenge', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
+//addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'this tekst is so long that it will break up into multiple rows becuase that makes the entire text visible and keeps the page looking clean and i need to add even more text to do that');
+addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp2', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Schenge', './assets/images/schenge.jpg', 'The majority of the time, water plants and other species do not have enough habitat.<br> Low biodiversity is the result.<br> Connected to Veerse Meer, the elevation of Schenge is about 0.3 meters NAP, annually increasing.<br> The water quality in the Schenge region generally falls short of the standards.<br> It is mostly affected by eutrophication, pollution with some heavy metals and pesticides, and inadequate access for migratory fish.');
+addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/zwaakseWeel.jpg', 'The Zwaakse Weel channel is made up of wetlands, open water devoid of aquatic life.<br> Zwaakse Weel has a low elevation of -0.5 meters NAP.<br> The water is slightly brackish, and particularly nutrient rich.<br> The quality of water is fresh enough to irrigate a wide range of crops, especially drought-sensitive crops.');
 
 // add reacreational area (dams) buttons
-addFunctionalButton('inputButton2', 'positionIbutton3', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area1', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton4', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area2', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton5', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area3', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton6', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area4', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton2', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area1', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton3', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area2', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton4', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area3', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton5', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area4', './assets/images/49414.jpg', 'dit is tekst');
 
 // add town buttons
-addFunctionalButton('inputButton3', 'positionIbutton7', 'infoCard3PopUp', 'popUp-content-styling2', 'stylingHeaderInfoCard1', "s'-Heer Arendskerke", './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton8', 'infoCard3PopUp2', 'popUp-content-styling2', 'stylingHeaderInfoCard1', 'HeinKenszand', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton9', 'infoCard3PopUp', 'popUp-content-styling2', 'stylingHeaderInfoCard1', 'Nisse', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton10', 'infoCard3PopUp2', 'popUp-content-styling2', 'stylingHeaderInfoCard1', "'s-Gravenpolder", './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton6', 'infoCard3PopUp', 'popUp-content-styling2', 'stylingHeaderInfoCard1', "s'-Heer Arendskerke", './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton7', 'infoCard3PopUp2', 'popUp-content-styling2', 'stylingHeaderInfoCard1', 'HeinKenszand', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton8', 'infoCard3PopUp', 'popUp-content-styling2', 'stylingHeaderInfoCard1', 'Nisse', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton9', 'infoCard3PopUp2', 'popUp-content-styling2', 'stylingHeaderInfoCard1', "'s-Gravenpolder", './assets/images/49414.jpg', 'dit is tekst');
 
 // add buffer buttons
-addFunctionalButton('inputButton2', 'positionIbutton11', 'infoCard2PopUp', 'popUp-content-styling3', 'stylingHeaderInfoCard1', 'Buffer', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton10', 'infoCard2PopUp', 'popUp-content-styling3', 'stylingHeaderInfoCard1', 'Buffer', './assets/images/forestZone.jpg', 'dit is tekst');
 
 // add information buttons
-addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterlevel', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterquality', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton14', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Width and Depth', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton15', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Covert control', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton16', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Canal shape', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton17', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Trees', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton18', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', ' clean button', './assets/images/49414.jpg', 'dit is tekst');
 
+addFunctionalButton('inputButton1', 'positionIbutton11', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Culvert', './assets/images/49414.jpg', 'The use of a culvert has been chosen as the best option to cross the roads that are in the way of the connection route.<br> Due to the soft soil surrounding the area (marine clay), box culvert has been chosen, as it can also hold heavy loads.<br> Since the type of soil is soft, it can be strengthened by use of wick drain or Prefabricated Vertical Drain (PVD) which can take water out of the soft soil.');
+addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Canal shape', './assets/images/49414.jpg', 'The earthen canal will be made in a trapezoidal shape and considering the soil, will need to have a slope between 18-20 degrees.');
+addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Trees', './assets/images/49414.jpg', 'dit is tekst');
+//addFunctionalButton('inputButton1', 'positionIbutton18', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', ' clean button', './assets/images/49414.jpg', 'dit is tekst');
+//addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterlevel', './assets/images/49414.jpg', 'dit is tekst');
+//addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterquality', './assets/images/49414.jpg', 'dit is tekst');
+//addFunctionalButton('inputButton1', 'positionIbutton14', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Width and Depth', './assets/images/49414.jpg', 'dit is tekst');
 
 makeButtonClickable();
 clearRiverButtons();
