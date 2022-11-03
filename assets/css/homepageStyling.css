@@ -208,6 +208,8 @@ body {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 0.9;
+    font-size: x-large;
+    overflow-wrap: break-word;
 }
 
 /* Modal Content */
@@ -257,7 +259,7 @@ body {
     background-color: rgba(0, 128, 0, 0.500);
     color: black;
 }
-.popUp-content-styling4 {
+.popUp-content-styling2 {
     background-color: rgba(255, 115, 0, 0.500);
     color: white;
 }
@@ -266,7 +268,7 @@ body {
     color: white;
 }
 .popUp-content-styling4 {
-    background-color: rgba(49, 47, 48, 0.500);
+    background-color: rgba(49, 47, 48, 0.900);
     color: white;
 }
 

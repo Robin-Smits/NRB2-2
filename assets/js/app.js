@@ -554,7 +554,7 @@ function showDamsButtons() {
     inputButtonHide[6].style.display = 'block';
 }
 /**
- * Function that makes the inputbuttons of dams disappear
+ * Function that makes the inputbuttons of area disappear
  */
 function clearAreaButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
@@ -565,7 +565,7 @@ function clearAreaButtons() {
     inputButtonHide[10].style.display = 'none';
 }
 /**
- * Function that makes the inputbuttons of dams appear
+ * Function that makes the inputbuttons of area appear
  */
 function showAreaButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
@@ -619,7 +619,7 @@ function clearInformationButtons() {
     inputButtonHide[18].style.display = 'none';
 }
 // add existing waterbody (rivers) buttons
-addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'this tekst is so long that it will break up into multiple rows becuase that makes the entire text visible and keeps the page looking clean and i need to add even more text to do that');
 addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp2', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Schenge', './assets/images/49414.jpg', 'dit is tekst');
 addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
 
@@ -639,13 +639,13 @@ addFunctionalButton('inputButton3', 'positionIbutton10', 'infoCard3PopUp2', 'pop
 addFunctionalButton('inputButton2', 'positionIbutton11', 'infoCard2PopUp', 'popUp-content-styling3', 'stylingHeaderInfoCard1', 'Buffer', './assets/images/49414.jpg', 'dit is tekst');
 
 // add information buttons
-addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '4e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '5e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton14', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '6e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton15', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '7e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton16', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '8e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton17', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '9e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton18', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '10e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterlevel', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Waterquality', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton14', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Width and Depth', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton15', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Covert control', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton16', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Canal shape', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton17', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Trees', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton18', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', ' clean button', './assets/images/49414.jpg', 'dit is tekst');
 
 
 makeButtonClickable();
