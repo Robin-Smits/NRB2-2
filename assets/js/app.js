@@ -18,7 +18,7 @@ basicButton.addEventListener('click', checkBoxInput); // changeMapToBasic
 resetButton.addEventListener('click', changeMapToBasic);
 addComment.addEventListener('click', addComments);
 /**
- * Function that retrieves the users output from the checkboxes and makes all checkboxes work and do their job
+ * Function that retrieves the users output from the checkboxes
  */
 function checkBoxInput() {
     const checkBoxRivers = document.getElementById('riversCheck');
@@ -74,6 +74,8 @@ function changeMapToBasic() {
     uncheckAll();
     // clear all overlays
     clearMapOverlays();
+    //changeMap = document.getElementById('changeMapDisplay');
+    //changeMap.src = "./assets/images/YvesBasicVersion.png";
 };
 
 /**
@@ -125,10 +127,11 @@ function changeMapToInformation() {
  * Function that makes the checkboxes empty
  */
 function uncheckAll() {
-    document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
+    document.querySelectorAll('input[type="checkbox"]')
+        .forEach(el => el.checked = false);
 }
 
-document.querySelector('button').addEventListener('click', uncheckAll);
+document.querySelector('button').addEventListener('click', uncheckAll)
 
 /**
  * Function that gets the inputted data and makes a new comment with it.
@@ -177,7 +180,7 @@ function addCommentsLayout(firstName, lastName, organization, comment) {
     } else {
         alert("Your inputs didn't meet the requirements. The requerements are at least one character");
     }
-    clearInputFields();
+    clearInputFields()
 };
 
 /**
@@ -209,12 +212,12 @@ function createMapOverlay(OverlaySource) {
     imgDiv = document.createElement('div');
     source = document.getElementById('mapDisplayOverlays');
     imgDiv.classList.add('mapOverlay');
-    imgDiv.setAttribute('id', 'mapOverlay');
+    imgDiv.setAttribute('id', 'mapOverlay')
     source.appendChild(imgDiv);
     displayRivers = document.createElement('img');
     displayRivers.src = OverlaySource;
     displayRivers.classList.add('maps');
-    displayRivers.setAttribute('alt', 'map');
+    displayRivers.setAttribute('alt', 'map')
     imgDiv.appendChild(displayRivers);
 }
 
@@ -235,7 +238,7 @@ function changeMapTitle(newMapTitle) {
 function createChangeButton(inputButtonID, buttonPositionStyle) {
     buttonDiv = document.createElement('div');
     src = document.getElementById('mapDisplay');
-    buttonDiv.setAttribute('id', `div${inputButtonID}`);
+    buttonDiv.setAttribute('id', `div${inputButtonID}`)
     src.appendChild(buttonDiv);
 
     inputButton = document.createElement('button');
@@ -301,14 +304,11 @@ function makeButtonClickable() {
     var modal = document.getElementsByClassName('popUp');
     // Get the button that opens the modal
     var btn = document.getElementsByClassName('mapOverlayButton');
-    //console.log(btn);
-
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName('popUp-sluiten');
 
     // When the user clicks the button, open the modal 
-    // Rivers
     btn[0].onclick = function () {
         modal[0].style.display = "block";
     }
@@ -339,7 +339,6 @@ function makeButtonClickable() {
     btn[9].onclick = function () {
         modal[9].style.display = "block";
     }
-    // Dams
     btn[10].onclick = function () {
         modal[10].style.display = "block";
     }
@@ -350,11 +349,7 @@ function makeButtonClickable() {
     btn[12].onclick = function () {
         modal[12].style.display = "block";
     }
-    btn[13].onclick = function () {
-        modal[13].style.display = "block";
-    }
     // When the user clicks on <span> (x), close the modal
-    // Rivers
     span[0].onclick = function () {
         modal[0].style.display = "none";
     }
@@ -385,7 +380,6 @@ function makeButtonClickable() {
     span[9].onclick = function () {
         modal[9].style.display = "none";
     }
-    // Dams
     span[10].onclick = function () {
         modal[10].style.display = "none";
     }
@@ -395,12 +389,8 @@ function makeButtonClickable() {
     span[12].onclick = function () {
         modal[12].style.display = "none";
     }
-    span[13].onclick = function () {
-        modal[13].style.display = "none";
-    }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
-        // Rivers
         if (event.target == modal[0]) {
             modal[0].style.display = "none";
         }
@@ -431,7 +421,6 @@ function makeButtonClickable() {
         if (event.target == modal[9]) {
             modal[9].style.display = "none";
         }
-        // Dams
         if (event.target == modal[10]) {
             modal[10].style.display = "none";
         }
@@ -456,8 +445,8 @@ function makeButtonClickable() {
  * @param {string} popUpInhoud The text in the pop-up
  */
 function addFunctionalButton(inputButtonID, buttonPositionStyle, infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, connectToImage, popUpInhoud) {
-    createChangeButton(inputButtonID, buttonPositionStyle)
-    createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, connectToImage, popUpInhoud)
+    createChangeButton(inputButtonID, buttonPositionStyle);
+    createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, connectToImage, popUpInhoud);
 }
 // show button Functions
 /**
@@ -575,9 +564,8 @@ addFunctionalButton('inputButton3', 'positionIbutton9', 'infoCard3PopUp2', 'popU
 addFunctionalButton('inputButton2', 'positionIbutton10', 'infoCard2PopUp', 'popUp-content-styling3', 'stylingHeaderInfoCard1', 'Buffer', './assets/images/forestZone.jpg', 'dit is tekst');
 
 // add information buttons
-
-addFunctionalButton('inputButton1', 'positionIbutton11', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Culvert', './assets/images/49414.jpg', 'The use of a culvert has been chosen as the best option to cross the roads that are in the way of the connection route.<br> Due to the soft soil surrounding the area (marine clay), box culvert has been chosen, as it can also hold heavy loads.<br> Since the type of soil is soft, it can be strengthened by use of wick drain or Prefabricated Vertical Drain (PVD) which can take water out of the soft soil.');
-addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Canal shape', './assets/images/49414.jpg', 'The earthen canal will be made in a trapezoidal shape and considering the soil, will need to have a slope between 18-20 degrees.');
+addFunctionalButton('inputButton1', 'positionIbutton11', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Culvert', './assets/images/Culvert.png', 'The use of a culvert has been chosen as the best option to cross the roads that are in the way of the connection route.<br> Due to the soft soil surrounding the area (marine clay), box culvert has been chosen, as it can also hold heavy loads.<br> Since the type of soil is soft, it can be strengthened by use of wick drain or Prefabricated Vertical Drain (PVD) which can take water out of the soft soil.');
+addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', 'Canal shape', './assets/images/Canal.png', 'The earthen canal will be made in a trapezoidal shape and considering the soil, will need to have a slope between 18-20 degrees.');
 
 makeButtonClickable();
 clearRiverButtons();
