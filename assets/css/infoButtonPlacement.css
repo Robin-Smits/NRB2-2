@@ -1,150 +1,101 @@
 /* positioning of the info button */
-.positionIbutton1 {
+
+/* existing waterbody 3 items */
+.positionIbutton0 {
     margin-left: 93%;
     margin-top: 66%;
 }
 
-.positionIbutton2 {
+.positionIbutton1 {
     margin-left: 14%;
     margin-top: 5%;
 }
 
-.positionIbutton3 {
+.positionIbutton2 {
     margin-left: 78%;
     margin-top: 61.6%;
 }
 
-.positionIbutton4 {
-    margin-left: 10%;
-    margin-top: 35%;
-}
-
-.positionIbutton5 {
-    margin-left: 50%;
-    margin-top: 35%;
-}
-
-.positionIbutton6 {
-    margin-left: 60%;
-    margin-top: 35%;
-}
-
-.positionIbutton7 {
-    margin-left: 70%;
-    margin-top: 35%;
-}
-
-.positionIbutton8 {
-    margin-left: 80%;
-    margin-top: 35%;
-}
-
-.positionIbutton9 {
-    margin-left: 90%;
-    margin-top: 35%;
-}
-
-.positionIbutton10 {
-    margin-left: 99%;
-    margin-top: 35%;
-}
-
-.positionIbutton11 {
+/* recreational areas 4 items */
+.positionIbutton3 {
     margin-left: 39.7%;
     margin-top: 30.8%;
 }
 
-.positionIbutton12 {
+.positionIbutton4 {
     margin-left: 46.5%;
     margin-top: 38.5%;
 }
 
-.positionIbutton13 {
+.positionIbutton5 {
     margin-left: 50.5%;
     margin-top: 62.5%;
 }
 
-.positionIbutton14 {
+.positionIbutton6 {
     margin-left: 67.3%;
     margin-top: 65%;
 }
 
-.positionIbutton15 {
-    margin-left: 50%;
-    margin-top: 5%;
-}
-
-.positionIbutton16 {
-    margin-left: 60%;
-    margin-top: 5%;
-}
-
-.positionIbutton17 {
-    margin-left: 70%;
-    margin-top: 5%;
-}
-
-.positionIbutton18 {
-    margin-left: 80%;
-    margin-top: 5%;
-}
-
-.positionIbutton19 {
-    margin-left: 90%;
-    margin-top: 5%;
-}
-
-.positionIbutton20 {
-    margin-left: 99%;
-    margin-top: 5%;
-}
-
-.positionIbutton21 {
+/* towns 4 items */
+.positionIbutton7 {
     margin-left: 45.3%;
     margin-top: 28.4%;
 }
 
-.positionIbutton22 {
+.positionIbutton8 {
     margin-left: 40%;
     margin-top: 42%;
 }
 
-.positionIbutton23 {
+.positionIbutton9 {
     margin-left: 57.5%;
     margin-top: 57%;
 }
 
-.positionIbutton24 {
+.positionIbutton10 {
     margin-left: 82.3%;
     margin-top: 54%;
 }
+/* Buffers items 1 */
 
-.positionIbutton25 {
-    margin-left: 50%;
-    margin-top: 65%;
+.positionIbutton11 {
+    margin-left: 0%;
+    margin-top: 35%;
 }
 
-.positionIbutton26 {
-    margin-left: 60%;
-    margin-top: 65%;
+/* Information */
+.positionIbutton12 {
+    margin-left: -1.6%;
+    margin-top: 35%;
 }
 
-.positionIbutton27 {
-    margin-left: 70%;
-    margin-top: 65%;
+.positionIbutton13 {
+    margin-left: -3.2%;
+    margin-top: 35%;
 }
 
-.positionIbutton28 {
-    margin-left: 80%;
-    margin-top: 65%;
+.positionIbutton14 {
+    margin-left: -4.8%;
+    margin-top: 35%;
 }
 
-.positionIbutton29 {
-    margin-left: 90%;
-    margin-top: 65%;
+.positionIbutton15 {
+    margin-left: -6.4%;
+    margin-top: 35%;
 }
 
-.positionIbutton30 {
-    margin-left: 99%;
-    margin-top: 65%;
+.positionIbutton16 {
+    margin-left: -8%;
+    margin-top: 35%;
+}
+
+.positionIbutton17 {
+    margin-left: -9.6%;
+    margin-top: 35%;
+}
+
+.positionIbutton18 {
+    margin-left: 39.7%;
+    margin-top: 30.8%;
 }

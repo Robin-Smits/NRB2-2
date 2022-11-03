@@ -247,17 +247,26 @@ body {
     font-size: 40px;
 }
 
-.stylingHeaderInfoCard2 {
-    text-align: center;
-    font-size: 40px;
-}
-
-.popUp-content-styling {
-    background-color: rgb(49, 47, 48);
+.popUp-content-styling0 {
+    /*background-color: rgba(49, 47, 48, 0.751);*/
+    background-color: rgba(135, 206, 250, 0.505);
     color: white;
 }
 
 .popUp-content-styling1 {
-    background-color: green;
-    color: yellow;
+    background-color: rgba(0, 128, 0, 0.500);
+    color: black;
 }
+.popUp-content-styling4 {
+    background-color: rgba(255, 115, 0, 0.500);
+    color: white;
+}
+.popUp-content-styling3 {
+    background-color: rgba(117, 63, 2, 0.500);
+    color: white;
+}
+.popUp-content-styling4 {
+    background-color: rgba(49, 47, 48, 0.500);
+    color: white;
+}
+

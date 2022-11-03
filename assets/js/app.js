@@ -24,6 +24,8 @@ function checkBoxInput() {
     const checkBoxRivers = document.getElementById('riversCheck');
     const checkBoxDams = document.getElementById('damsCheck');
     const checkBoxArea = document.getElementById('areaCheck');
+    const checkBoxBuffer = document.getElementById('bufferrCheck');
+    const checkBoxInformation = document.getElementById('newRiverCheck');
     if (checkBoxRivers.checked == true) {
         console.log('Rivers Activate');
         changeMapToRivers();
@@ -42,7 +44,39 @@ function checkBoxInput() {
     } else {
         console.log('Area Inactive');
     }
+    if (checkBoxBuffer.checked == true) {
+        console.log('Buffer Activate');
+        changeMapToBuffer();
+    } else {
+        console.log('Buffer Inactive');
+    }
+    if (checkBoxInformation.checked == true) {
+        console.log('Information Activate');
+        changeMapToInformation();
+    } else {
+        console.log('Information Inactive');
+    }
 }
+
+/**
+ * Function that makes all the overlays disappear and sets the map to the basic one
+ */
+function changeMapToBasic() {
+    // change title back
+    changeMapTitle('Base map');
+    // remove all buttons
+    clearRiverButtons();
+    clearDamsButtons();
+    clearAreaButtons();
+    clearBufferButtons()
+    clearInformationButtons();
+    //uncheck all options
+    uncheckAll();
+    // clear all overlays
+    clearMapOverlays();
+    //changeMap = document.getElementById('changeMapDisplay');
+    //changeMap.src = "./assets/images/YvesBasicVersion.png";
+};
 
 /**
  * Function that makes an overlay with the river overview and shows it
@@ -52,32 +86,11 @@ function changeMapToRivers() {
     // add info cards
     showRiverButtons();
     createMapOverlay("./assets/images/existingWaterBodys.png");
-    //changeMap = document.getElementById('changeMapDisplay');
-    //changeMap.src = "./assets/images/YvesInfrastructure.png";
 };
-
-
-/**
- * Function that makes all the overlays disappear and sets the map to the basic one
- */
-function changeMapToBasic() {
-    changeMapTitle('Base map');
-    clearRiverButtons();
-    clearDamsButtons();
-    clearAreaButtons();
-    uncheckAll();
-
-    changeMap = document.getElementById('changeMapDisplay');
-    changeMap.src = "./assets/images/YvesBasicVersion.png";
-
-    clearMapOverlays();
-};
-
 /**
  * Function that puts an overlay on of the dams
  */
 function changeMapTodams() {
-    //createMapOverlay("./assets/images/river.png");
     changeMapTitle('Recreational areas');
     // add info cards
     showDamsButtons();
@@ -88,11 +101,26 @@ function changeMapTodams() {
  * Function that makes a overlay appear with the area visual
  */
 function changeMapToarea() {
-    //createMapOverlay("./assets/images/river.png");
     changeMapTitle('Towns');
     //add info cards
     showAreaButtons();
     createMapOverlay("./assets/images/towns.png");
+};
+/**
+ * Function that makes a overlay appear with the buffer visual
+ */
+function changeMapToBuffer() {
+    changeMapTitle('Buffer');
+    showBufferButtons();
+    //createMapOverlay("./assets/images/towns.png");
+};
+/**
+ * Function that makes a overlay appear with the information visual
+ */
+function changeMapToInformation() {
+    changeMapTitle('The Yve');
+    //add info cards
+    showInformationButtons();
 };
 
 /**
@@ -276,7 +304,7 @@ function makeButtonClickable() {
     var modal = document.getElementsByClassName('popUp');
     // Get the button that opens the modal
     var btn = document.getElementsByClassName('mapOverlayButton');
-    console.log(btn);
+    //console.log(btn);
 
 
     // Get the <span> element that closes the modal
@@ -287,7 +315,6 @@ function makeButtonClickable() {
     btn[0].onclick = function () {
         modal[0].style.display = "block";
     }
-
     btn[1].onclick = function () {
         modal[1].style.display = "block";
     }
@@ -343,41 +370,6 @@ function makeButtonClickable() {
     }
     btn[18].onclick = function () {
         modal[18].style.display = "block";
-    }
-    btn[19].onclick = function () {
-        modal[29].style.display = "block";
-    }
-    // Area
-    btn[20].onclick = function () {
-        modal[20].style.display = "block";
-    }
-
-    btn[21].onclick = function () {
-        modal[21].style.display = "block";
-    }
-    btn[22].onclick = function () {
-        modal[22].style.display = "block";
-    }
-    btn[23].onclick = function () {
-        modal[23].style.display = "block";
-    }
-    btn[24].onclick = function () {
-        modal[24].style.display = "block";
-    }
-    btn[25].onclick = function () {
-        modal[25].style.display = "block";
-    }
-    btn[26].onclick = function () {
-        modal[26].style.display = "block";
-    }
-    btn[27].onclick = function () {
-        modal[27].style.display = "block";
-    }
-    btn[28].onclick = function () {
-        modal[28].style.display = "block";
-    }
-    btn[29].onclick = function () {
-        modal[29].style.display = "block";
     }
     // When the user clicks on <span> (x), close the modal
     // Rivers
@@ -438,40 +430,6 @@ function makeButtonClickable() {
     }
     span[18].onclick = function () {
         modal[18].style.display = "none";
-    }
-    span[19].onclick = function () {
-        modal[19].style.display = "none";
-    }
-    // Area
-    span[20].onclick = function () {
-        modal[20].style.display = "none";
-    }
-    span[21].onclick = function () {
-        modal[21].style.display = "none";
-    }
-    span[22].onclick = function () {
-        modal[22].style.display = "none";
-    }
-    span[23].onclick = function () {
-        modal[23].style.display = "none";
-    }
-    span[24].onclick = function () {
-        modal[24].style.display = "none";
-    }
-    span[25].onclick = function () {
-        modal[25].style.display = "none";
-    }
-    span[26].onclick = function () {
-        modal[26].style.display = "none";
-    }
-    span[27].onclick = function () {
-        modal[27].style.display = "none";
-    }
-    span[28].onclick = function () {
-        modal[28].style.display = "none";
-    }
-    span[29].onclick = function () {
-        modal[29].style.display = "none";
     }
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {
@@ -534,40 +492,6 @@ function makeButtonClickable() {
         if (event.target == modal[18]) {
             modal[18].style.display = "none";
         }
-        if (event.target == modal[19]) {
-            modal[19].style.display = "none";
-        }
-        // Area
-        if (event.target == modal[20]) {
-            modal[20].style.display = "none";
-        }
-        if (event.target == modal[21]) {
-            modal[21].style.display = "none";
-        }
-        if (event.target == modal[22]) {
-            modal[22].style.display = "none";
-        }
-        if (event.target == modal[23]) {
-            modal[23].style.display = "none";
-        }
-        if (event.target == modal[24]) {
-            modal[24].style.display = "none";
-        }
-        if (event.target == modal[25]) {
-            modal[25].style.display = "none";
-        }
-        if (event.target == modal[26]) {
-            modal[26].style.display = "none";
-        }
-        if (event.target == modal[27]) {
-            modal[27].style.display = "none";
-        }
-        if (event.target == modal[28]) {
-            modal[28].style.display = "none";
-        }
-        if (event.target == modal[29]) {
-            modal[29].style.display = "none";
-        }
     }
 }
 
@@ -586,69 +510,92 @@ function addFunctionalButton(inputButtonID, buttonPositionStyle, infoCardPopUpID
     createChangeButton(inputButtonID, buttonPositionStyle)
     createPopUp(infoCardPopUpID, popUpContentStyling, infoCardPositioningClass, popUpTitle, connectToImage, popUpInhoud)
 }
+// show button Functions
 /**
  * Function that makes the inputbuttons of rivers disappear
  */
 function clearRiverButtons() {
-    for (i = 0; i < 50; i++) {
-        inputButtonHide = document.getElementsByClassName('mapOverlayButton');
-        console.log(inputButtonHide);
-        inputButtonHide[0].style.display = 'none';
-        inputButtonHide[1].style.display = 'none';
-        inputButtonHide[2].style.display = 'none';
-        inputButtonHide[3].style.display = 'none';
-        inputButtonHide[4].style.display = 'none';
-        inputButtonHide[5].style.display = 'none';
-        inputButtonHide[6].style.display = 'none';
-        inputButtonHide[7].style.display = 'none';
-        inputButtonHide[8].style.display = 'none';
-        inputButtonHide[9].style.display = 'none';
-    }
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    //style change
+    inputButtonHide[0].style.display = 'none';
+    inputButtonHide[1].style.display = 'none';
+    inputButtonHide[2].style.display = 'none';
 }
 /**
  * Function that makes the inputbuttons of rivers appear
  */
 function showRiverButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
-    console.log(inputButtonHide);
+    //style change
     inputButtonHide[0].style.display = 'block';
     inputButtonHide[1].style.display = 'block';
     inputButtonHide[2].style.display = 'block';
-    inputButtonHide[3].style.display = 'block';
-    inputButtonHide[4].style.display = 'block';
-    inputButtonHide[5].style.display = 'block';
-    inputButtonHide[6].style.display = 'block';
-    inputButtonHide[7].style.display = 'block';
-    inputButtonHide[8].style.display = 'block';
-    inputButtonHide[9].style.display = 'block';
 }
 /**
  * Function that makes the inputbuttons of dams disappear
  */
- function clearDamsButtons() {
-    for (i = 0; i < 50; i++) {
-        inputButtonHide = document.getElementsByClassName('mapOverlayButton');
-        console.log(inputButtonHide);
-        inputButtonHide[10].style.display = 'none';
-        inputButtonHide[11].style.display = 'none';
-        inputButtonHide[12].style.display = 'none';
-        inputButtonHide[13].style.display = 'none';
-        inputButtonHide[14].style.display = 'none';
-        inputButtonHide[15].style.display = 'none';
-        inputButtonHide[16].style.display = 'none';
-        inputButtonHide[17].style.display = 'none';
-        inputButtonHide[18].style.display = 'none';
-        inputButtonHide[19].style.display = 'none';
-    }
+function clearDamsButtons() {
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    //style change
+    inputButtonHide[3].style.display = 'none';
+    inputButtonHide[4].style.display = 'none';
+    inputButtonHide[5].style.display = 'none';
+    inputButtonHide[6].style.display = 'none';
 }
 /**
  * Function that makes the inputbuttons of dams appear
  */
 function showDamsButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
-    console.log(inputButtonHide);
+    //style change
+    inputButtonHide[3].style.display = 'block';
+    inputButtonHide[4].style.display = 'block';
+    inputButtonHide[5].style.display = 'block';
+    inputButtonHide[6].style.display = 'block';
+}
+/**
+ * Function that makes the inputbuttons of dams disappear
+ */
+function clearAreaButtons() {
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    //style change
+    inputButtonHide[7].style.display = 'none';
+    inputButtonHide[8].style.display = 'none';
+    inputButtonHide[9].style.display = 'none';
+    inputButtonHide[10].style.display = 'none';
+}
+/**
+ * Function that makes the inputbuttons of dams appear
+ */
+function showAreaButtons() {
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    //style change
+    inputButtonHide[7].style.display = 'block';
+    inputButtonHide[8].style.display = 'block';
+    inputButtonHide[9].style.display = 'block';
     inputButtonHide[10].style.display = 'block';
+}
+/**
+ * Function that makes the inputbuttons of buffer appear
+ */
+function showBufferButtons() {
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    //style change
     inputButtonHide[11].style.display = 'block';
+}
+/**
+ * Function that makes the inputbuttons of buffer disappear
+ */
+function clearBufferButtons() {
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
+    //style change
+    inputButtonHide[11].style.display = 'none';
+}
+/**
+ * Function that makes the inputbuttons of information appear
+ */
+function showInformationButtons() {
+    inputButtonHide = document.getElementsByClassName('mapOverlayButton');
     inputButtonHide[12].style.display = 'block';
     inputButtonHide[13].style.display = 'block';
     inputButtonHide[14].style.display = 'block';
@@ -656,82 +603,54 @@ function showDamsButtons() {
     inputButtonHide[16].style.display = 'block';
     inputButtonHide[17].style.display = 'block';
     inputButtonHide[18].style.display = 'block';
-    inputButtonHide[19].style.display = 'block';
 }
 /**
- * Function that makes the inputbuttons of dams disappear
+ * Function that makes the inputbuttons of information disappear
  */
- function clearAreaButtons() {
-    for (i = 0; i < 50; i++) {
-        inputButtonHide = document.getElementsByClassName('mapOverlayButton');
-        console.log(inputButtonHide);
-        inputButtonHide[20].style.display = 'none';
-        inputButtonHide[21].style.display = 'none';
-        inputButtonHide[22].style.display = 'none';
-        inputButtonHide[23].style.display = 'none';
-        inputButtonHide[24].style.display = 'none';
-        inputButtonHide[25].style.display = 'none';
-        inputButtonHide[26].style.display = 'none';
-        inputButtonHide[27].style.display = 'none';
-        inputButtonHide[28].style.display = 'none';
-        inputButtonHide[29].style.display = 'none';
-    }
-}
-/**
- * Function that makes the inputbuttons of dams appear
- */
-function showAreaButtons() {
+function clearInformationButtons() {
     inputButtonHide = document.getElementsByClassName('mapOverlayButton');
-    console.log(inputButtonHide);
-    inputButtonHide[20].style.display = 'block';
-    inputButtonHide[21].style.display = 'block';
-    inputButtonHide[22].style.display = 'block';
-    inputButtonHide[23].style.display = 'block';
-    inputButtonHide[24].style.display = 'block';
-    inputButtonHide[25].style.display = 'block';
-    inputButtonHide[26].style.display = 'block';
-    inputButtonHide[27].style.display = 'block';
-    inputButtonHide[28].style.display = 'block';
-    inputButtonHide[29].style.display = 'block';
+    //style change
+    inputButtonHide[12].style.display = 'none';
+    inputButtonHide[13].style.display = 'none';
+    inputButtonHide[14].style.display = 'none';
+    inputButtonHide[15].style.display = 'none';
+    inputButtonHide[16].style.display = 'none';
+    inputButtonHide[17].style.display = 'none';
+    inputButtonHide[18].style.display = 'none';
 }
+// add existing waterbody (rivers) buttons
+addFunctionalButton('inputButton1', 'positionIbutton0', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp2', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Schenge', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp', 'popUp-content-styling0', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
 
-// add rivers buttons
-addFunctionalButton('inputButton1', 'positionIbutton1', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', ' Entrance Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton2', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', 'Schenge', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton3', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', 'Zwaakse Weel', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton4', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '4e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton5', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '5e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton6', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '6e pop up', './assets/images/49414.jpg','dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton7', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '7e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton8', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '8e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton9', 'infoCard1PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '9e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton1', 'positionIbutton10', 'infoCard1PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '10e pop up', './assets/images/49414.jpg', 'dit is tekst');
+// add reacreational area (dams) buttons
+addFunctionalButton('inputButton2', 'positionIbutton3', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area1', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton4', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area2', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton5', 'infoCard2PopUp', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area3', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton2', 'positionIbutton6', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard1', 'area4', './assets/images/49414.jpg', 'dit is tekst');
 
-// add dams buttons
-addFunctionalButton('inputButton2', 'positionIbutton11', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.1e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton12', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.2e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton13', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.3e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton14', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.4e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton15', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.5e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton16', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.6e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton17', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.7e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton18', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.8e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton19', 'infoCard2PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '2.9e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton2', 'positionIbutton20', 'infoCard2PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '2.10e pop up', './assets/images/49414.jpg', 'dit is tekst');
+// add town buttons
+addFunctionalButton('inputButton3', 'positionIbutton7', 'infoCard3PopUp', 'popUp-content-styling2', 'stylingHeaderInfoCard1', "s'-Heer Arendskerke", './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton8', 'infoCard3PopUp2', 'popUp-content-styling2', 'stylingHeaderInfoCard1', 'HeinKenszand', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton9', 'infoCard3PopUp', 'popUp-content-styling2', 'stylingHeaderInfoCard1', 'Nisse', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton3', 'positionIbutton10', 'infoCard3PopUp2', 'popUp-content-styling2', 'stylingHeaderInfoCard1', "'s-Gravenpolder", './assets/images/49414.jpg', 'dit is tekst');
 
-// add Area buttons
-addFunctionalButton('inputButton3', 'positionIbutton21', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.1e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton22', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', 'HeinKenszand', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton23', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.3e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton24', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.4e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton25', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.5e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton26', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.6e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton27', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.7e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton28', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.8e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton29', 'infoCard3PopUp', 'popUp-content-styling', 'stylingHeaderInfoCard1', '3.9e pop up', './assets/images/49414.jpg', 'dit is tekst');
-addFunctionalButton('inputButton3', 'positionIbutton30', 'infoCard3PopUp2', 'popUp-content-styling1', 'stylingHeaderInfoCard2', '3.10e pop up', './assets/images/49414.jpg', 'dit is tekst');
+// add buffer buttons
+addFunctionalButton('inputButton2', 'positionIbutton11', 'infoCard2PopUp', 'popUp-content-styling3', 'stylingHeaderInfoCard1', 'Buffer', './assets/images/49414.jpg', 'dit is tekst');
+
+// add information buttons
+addFunctionalButton('inputButton1', 'positionIbutton12', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '4e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton13', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '5e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton14', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '6e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton15', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '7e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton16', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '8e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton17', 'infoCard1PopUp', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '9e pop up', './assets/images/49414.jpg', 'dit is tekst');
+addFunctionalButton('inputButton1', 'positionIbutton18', 'infoCard1PopUp2', 'popUp-content-styling4', 'stylingHeaderInfoCard1', '10e pop up', './assets/images/49414.jpg', 'dit is tekst');
+
 
 makeButtonClickable();
 clearRiverButtons();
 clearDamsButtons();
 clearAreaButtons();
+clearBufferButtons()
+clearInformationButtons();
