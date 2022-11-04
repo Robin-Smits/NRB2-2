@@ -1,4 +1,4 @@
-console.log('hello');
+console.log('Javascript is working');
 const basicButton = document.getElementById('basicBTN');
 const resetButton = document.getElementById('resetBTN');
 const addComment = document.getElementById('add-button');
@@ -27,34 +27,19 @@ function checkBoxInput() {
     const checkBoxBuffer = document.getElementById('bufferrCheck');
     const checkBoxInformation = document.getElementById('newRiverCheck');
     if (checkBoxRivers.checked == true) {
-        console.log('Rivers Activate');
         changeMapToRivers();
-    } else {
-        console.log('Rivers Inactive')
     }
     if (checkBoxDams.checked == true) {
-        console.log('Dams Activate');
         changeMapTodams();
-    } else {
-        console.log('Dams Inactive');
     }
     if (checkBoxArea.checked == true) {
-        console.log('Area Activate');
         changeMapToarea();
-    } else {
-        console.log('Area Inactive');
     }
     if (checkBoxBuffer.checked == true) {
-        console.log('Buffer Activate');
         changeMapToBuffer();
-    } else {
-        console.log('Buffer Inactive');
     }
     if (checkBoxInformation.checked == true) {
-        console.log('Information Activate');
         changeMapToInformation();
-    } else {
-        console.log('Information Inactive');
     }
 }
 
@@ -74,8 +59,6 @@ function changeMapToBasic() {
     uncheckAll();
     // clear all overlays
     clearMapOverlays();
-    //changeMap = document.getElementById('changeMapDisplay');
-    //changeMap.src = "./assets/images/YvesBasicVersion.png";
 };
 
 /**
@@ -131,7 +114,7 @@ function uncheckAll() {
         .forEach(el => el.checked = false);
 }
 
-document.querySelector('button').addEventListener('click', uncheckAll)
+document.querySelector('button').addEventListener('click', uncheckAll);
 
 /**
  * Function that gets the inputted data and makes a new comment with it.
@@ -175,7 +158,7 @@ function addCommentsLayout(firstName, lastName, organization, comment) {
         //p commentsection
         displayComment = document.createElement('p');
         displayComment.innerHTML = `${comment}`;
-        displayComment.classList.add('UserComment')
+        displayComment.classList.add('UserComment');
         commentDiv.appendChild(displayComment);
     } else {
         alert("Your inputs didn't meet the requirements. The requerements are at least one character");
@@ -198,7 +181,7 @@ function clearInputFields() {
  * Functie that removes the overlays of the map
  */
 function clearMapOverlays() {
-    for (i = 0; i < 25; i++) {
+    for (i = 0; i < 15; i++) {
         const mapOverlayRemove = document.getElementById("mapOverlay");
         mapOverlayRemove.remove();
     }
@@ -212,12 +195,12 @@ function createMapOverlay(OverlaySource) {
     imgDiv = document.createElement('div');
     source = document.getElementById('mapDisplayOverlays');
     imgDiv.classList.add('mapOverlay');
-    imgDiv.setAttribute('id', 'mapOverlay')
+    imgDiv.setAttribute('id', 'mapOverlay');
     source.appendChild(imgDiv);
     displayRivers = document.createElement('img');
     displayRivers.src = OverlaySource;
     displayRivers.classList.add('maps');
-    displayRivers.setAttribute('alt', 'map')
+    displayRivers.setAttribute('alt', 'map');
     imgDiv.appendChild(displayRivers);
 }
 
@@ -238,7 +221,7 @@ function changeMapTitle(newMapTitle) {
 function createChangeButton(inputButtonID, buttonPositionStyle) {
     buttonDiv = document.createElement('div');
     src = document.getElementById('mapDisplay');
-    buttonDiv.setAttribute('id', `div${inputButtonID}`)
+    buttonDiv.setAttribute('id', `div${inputButtonID}`);
     src.appendChild(buttonDiv);
 
     inputButton = document.createElement('button');

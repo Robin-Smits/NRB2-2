@@ -46,3 +46,36 @@ inputButton.innerHTML = 'I';
 src.appendChild(inputButton);
 
 293
+    changeMap = document.getElementById('changeMapDisplay');
+    changeMap.src = "./assets/images/YvesBasicVersion.png";
+
+    if (checkBoxRivers.checked == true) {
+        console.log('Rivers Activate');
+        changeMapToRivers();
+    } else {
+        console.log('Rivers Inactive')
+    }
+    if (checkBoxDams.checked == true) {
+        console.log('Dams Activate');
+        changeMapTodams();
+    } else {
+        console.log('Dams Inactive');
+    }
+    if (checkBoxArea.checked == true) {
+        console.log('Area Activate');
+        changeMapToarea();
+    } else {
+        console.log('Area Inactive');
+    }
+    if (checkBoxBuffer.checked == true) {
+        console.log('Buffer Activate');
+        changeMapToBuffer();
+    } else {
+        console.log('Buffer Inactive');
+    }
+    if (checkBoxInformation.checked == true) {
+        console.log('Information Activate');
+        changeMapToInformation();
+    } else {
+        console.log('Information Inactive');
+    }
